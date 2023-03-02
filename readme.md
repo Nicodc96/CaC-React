@@ -1,6 +1,6 @@
 # Clases de Codo a Codo - React 2023
 
-<div align="center"><img src="https://inscripcionesagencia.bue.edu.ar/codoacodo/iconos/logos/logo-CAC.webp" width="300px" /></div>
+<div align="center"><img src="https://i.ibb.co/RBfQZLW/logo-CAC.webp" width="300px" /></div>
 
 * Autor: **Lautaro N. Díaz**
 * Comisión: **23307**
