@@ -1,12 +1,26 @@
 body{
     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgb(26, 25, 46) 0%, rgb(107, 44, 255) 35%, rgb(26, 25, 46) 100%);
+    background: linear-gradient(90deg, rgb(107, 44, 255) 0%,rgb(0, 0, 0) 35%, rgb(0, 0, 0) 50%, rgb(0, 0, 0) 65%, rgb(107, 44, 255) 100%);
 }
 
 .container{
     display: flex;
+    justify-content: center;
+    padding-top: 1vh;
+}
+
+.fig-1 > img{
+    padding-top: 10vh;
+}
+
+.logo{
+    display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.fig-2 > img{
+    padding-top: 10vh;
 }
 
 .centrar{
@@ -14,22 +28,21 @@ body{
 }
 
 #poster{
-    width: 740px;
-    height: 460px;
+    width: 800px;
+    height: 450px;
     transition: box-shadow .1s, transform .1s;
-    background: url("../assets/vengadores.jpeg") no-repeat center;
+    background: url("../assets/vengadores.jpg") no-repeat center;
     background-size: cover;
     border-radius: 10px;
+    margin-top: 6vh;
 }
 
 #poster:hover{
-    box-shadow: 0px 0px 50px rgb(230, 196, 255);
+    box-shadow: 0px 0px 50px rgb(209, 145, 255);
 }
 
 #logoAvengers{
-    transition: transform 0.5s;
-}
-
-#logoAvengers:hover{
-    transform: scale(1.1);
+    margin-top: 5vh;
+    border-radius: 4px;
+    margin-bottom: 5vh;
 }
