@@ -1,33 +1,31 @@
+import { hoverEffect, resetEffect } from "./functions.js";
+
 const $poster = document.querySelector("#poster");
 const $logo = document.querySelector("#logoAvengers");
-const poster_h = $poster.clientHeight;
-const poster_w = $poster.clientWidth;
-const $avengers_sound = new Audio("./assets/avengers-endgame.mp3");
-const ruta_logo = "./assets/logo-avengers.jpg";
-const ruta_logo_gif = "./assets/logo-avengers-mov.gif";
+const $avengers_sound = document.querySelector("#audioPoster");
 
 $avengers_sound.volume = 0.5;
 
 $poster.addEventListener("mousemove", (e) => {
-    const { layerX, layerY } = e;
-    const yRotation = (layerX - poster_w / 2) / poster_w * 20;
-    const xRotation = (layerY - poster_h / 2) / poster_h * 20;
-
-    const allTransformations = `perspective(500px) scale(1.05) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
-    $poster.style.transform = allTransformations;
-    $avengers_sound.play();
+    const { clientHeight, clientWidth } = $poster;
+    hoverEffect($poster, clientWidth, clientHeight, e);
 });
+
+$poster.addEventListener("click", () => {
+    $avengers_sound.play();
+    $avengers_sound.muted = false;
+})
 
 $poster.addEventListener("mouseout", () => {
-    $poster.style.transform = "perspective(500px) scale(1) rotateX(0) rotateY(0)";
+    resetEffect($poster);
     $avengers_sound.pause();
-    $avengers_sound.currentTime = 0;
 });
 
-$logo.addEventListener("mouseover", (e) => {
-    $logo.src = ruta_logo_gif;
+$logo.addEventListener("mousemove", (e) => {
+    const { clientHeight, clientWidth } = $logo;
+    hoverEffect($logo, clientWidth, clientHeight, e);
 });
 
-$logo.addEventListener("mouseout", (e) => {
-    $logo.src = ruta_logo;
+$logo.addEventListener("mouseout", () => {
+    resetEffect($logo);
 });
