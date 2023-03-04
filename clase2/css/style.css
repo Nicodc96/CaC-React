@@ -1,9 +1,6 @@
-*{
-    font-family: sans-serif;
-}
-
 body{
     background-color: rgb(184, 184, 184);
+    font-family: sans-serif;
 }
 
 .centrado{
@@ -16,8 +13,8 @@ body{
     border-radius: 8px;
 }
 
-.pt{
-    padding-top: 23vh;
+.mt-31{
+    margin-top: 31vh;
 }
 
 .mt{
@@ -30,10 +27,9 @@ body{
 }
 
 #botonToggle{
-    /* border: 1.5px solid rgb(37, 37, 37); */
     padding: 15px;
     position: fixed;
-    top: 43.1vh;
+    top: 50vh;
     left: 48vw;
     transform: rotateY(45deg);
 }

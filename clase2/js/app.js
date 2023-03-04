@@ -5,6 +5,8 @@ const audioOff = new Audio("./sound/batiClick.mp3");
 const rutaImgBatmanOn = "./img/batmanON.gif";
 const rutaImgBatmanOff = "./img/batmanOFF.jpg";
 
+audioOn.volume = 0.30;
+audioOff.volume = 0.6;
 audioOn.loop = true;
 
 $btnToggle.addEventListener("click", () => $btnToggle.classList.contains("apagado") ? encender() : apagar());
