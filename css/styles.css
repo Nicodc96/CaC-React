@@ -3,7 +3,7 @@ body{
 }
 
 #containerLogoText{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/img/code-background.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/img/code-background.jpg");
 }
 
 #infoCards{
