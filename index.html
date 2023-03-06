@@ -10,7 +10,82 @@
     <title>Página principal - CaC React</title>
 </head>
 <body>
-    <a href="clase2/index.html" target="_blank">Clase 2</a>
+    <header>
+        <nav class="navbar bg-dark pb-3 pt-3 navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/">Codo a Codo - React</a>
+              <img src="./assets/img/react-logo.png" alt="logo_react">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPrincipal" aria-controls="navbarPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarPrincipal">
+                <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                  <a class="nav-link" href="#cards">Clases de la cursada</a>
+                  <a class="nav-link" href="#">Acerca de</a>
+                </div>
+              </div>
+              <p class="text-white-50 mb-0">Díaz, Lautaro Nicolás &copy; 2023</p>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <section class="d-flex flex-column align-items-center pt-5 pb-5 text-white" id="containerLogoText">
+            <img src="./assets/img/logo-CAC.png" alt="logo_codoAcodo" class="img-fluid" width="500px">
+            <div class="d-flex justify-content-center gap-4 mt-4">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="75px"/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" width="75px"/>
+            </div>
+        </section>
+        <section class="d-flex flex-column align-items-center mt-5" id="containerTitleAndCards">
+            <h2>Listado de Clases</h2>
+            <article id="infoCards">
+                <p class="mb-0">En esta sección se alojan los <span class="fst-italic">'deploy'</span> de los proyectos según la clase en la que
+                se haya desarrollado. Algunas de ellas se encontrarán alojado <a href="http://github.com/Nicodc96/CaC-React" target="_blank">en este repositorio</a>, 
+                otras simplemente serán accedidos por un link externo en claso de ser proyectos desarrollados con <span class="fw-semibold">Node.js</span>
+                </p>
+            </article>
+            <section id="cards">
+                <div class="card" style="width: 18rem;">
+                    <img src="./clase2/img/batmanOFF.jpg" class="card-img-top" alt="img_clase2" height="250px">
+                    <div class="card-body card-body-height">
+                      <h5 class="card-title">Clase 2</h5>
+                      <p class="card-text fs-13px">Ejercicio en el cual utilizando dos imagenes y el manejo de eventos, al hacer click en
+                        la linterna del 'batman' se reproduzca un sonido y esta imagen se mueva.
+                      </p>
+                    </div>
+                    <div class="card-body d-flex justify-content-center gap-3 container-card-buttons">
+                      <a href="https://github.com/Nicodc96/CaC-React/tree/master/clase2" target="_blank" class="btn btn-secondary">Repositorio</a>
+                      <a href="./clase2/index.html" target="_blank" class="btn btn-primary">Deploy</a>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="./extra/clase2-extra/assets/vengadores.jpg" class="card-img-top" alt="img_clase2" height="250px">
+                    <div class="card-body card-body-height">
+                      <h5 class="card-title">Clase 2 - Extra 1</h5>
+                      <p class="card-text fs-13px">Ejercicio a libre criterio utilizando criterios vistos en la clase 2. En este caso utilicé la
+                        temática de Marvel Avengers.
+                      </p>
+                    </div>
+                    <div class="card-body d-flex justify-content-center gap-3 container-card-buttons">
+                      <a href="https://github.com/Nicodc96/CaC-React/tree/master/extra/clase2-extra" target="_blank" class="btn btn-secondary card-button">Repositorio</a>
+                      <a href="./extra/clase2-extra/index.html" target="_blank" class="btn btn-primary card-button">Deploy</a>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <nav class="navbar bg-dark pb-3 pt-3 navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+            <div class="container-fluid d-flex justify-content-between">
+                <div class="d-flex">
+                  <a class="navbar-brand" href="/">Codo a Codo - React</a>
+                  <img src="./assets/img/react-logo.png" class="align-self-center" alt="logo_react">
+              </div>
+              <p class="text-white-50 mb-0">Díaz, Lautaro Nicolás &copy; 2023</p>
+            </div>
+          </nav>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
