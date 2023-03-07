@@ -35,3 +35,22 @@ body{
 .card-button{
     height: 38px;
 }
+
+#fotoPersonal{
+    --s: 250px;   /* tamaño de la imagen */
+    --b: 8px;     /* el grueso del borde */
+    --g: 5px;    /* distancia del borde de la imagen en hover */
+    --c: rgb(255, 194, 61); /* color del borde en hover */
+  
+    width: var(--s);
+    aspect-ratio: 1;
+    outline: calc(var(--s)/2) solid rgba(0, 0, 0, 0.171);
+    outline-offset: calc(var(--s)/-2);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#fotoPersonal:hover{
+    outline: var(--b) solid var(--c);
+    outline-offset: var(--g);
+}
