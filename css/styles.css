@@ -20,6 +20,18 @@ body{
     margin-bottom: 4vh;
 }
 
+#card-img-container{
+    display: inline-block;
+    overflow: hidden;
+}
+#card-img-container > img{
+    display: block;
+    transition: all .45s;
+}
+#card-img-container > img:hover{
+    transform: scale(1.15);
+}
+
 .card-body-height{
     height: 150px;
 }
