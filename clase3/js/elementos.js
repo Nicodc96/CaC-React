@@ -1,3 +1,10 @@
+/**
+*   Crea una ventana modal diseñada por *Bootstrap* que servirá como contenedor
+*   para visualizar el ejercicio correspondiente.
+*   @param {Number} numEjercicio N° del ejercicio
+*   @param {Array} elementsModalBody Array de elementos a agregar dentro del modalBody
+*   @returns {HTMLDivElement} Referencia del *HTMLElement* modal diseñado.
+*/
 const crearModal = (numEjercicio, elementsModalBody) => {
     let id = `modalEjercicio${numEjercicio}`;
     const mainModal = createElementCustom("div", ["modal", "fade"], "", {
@@ -45,16 +52,34 @@ const modalFooter = () => {
     }));
     return modalFooter;
 }
-
+/**
+ * Crea un *HTMLElement* de tipo *button* que tiene como *data-bs-target*
+ * el ID del modal según el número del ejercicio ingresado.
+ * @param {Number} numEjercicio N° del ejercicio a apuntar
+ * @returns {HTMLElement} Referencia del *HTMLElement* button diseñado.
+ */
 const crearModalButton = (numEjercicio) => {
     return createElementCustom("button", ["btn", "btn-primary"], `Ejercicio ${numEjercicio}`, { 
     "data-bs-toggle": "modal",
     "data-bs-target": `#modalEjercicio${numEjercicio}`
     });
 }
-
+/**
+ * Crea un *HTMLElement* de tipo *article* que servirá como contenedor de la ventana
+ * modal con su ID único según el N° del ejercicio.
+ * @param {Number} numEjercicio N° del ejercicio a apuntar
+ * @returns {HTMLDivElement} Referencia del *HTMLElement* article diseñado.
+ */
 const crearContenedorModal = (numEjercicio) => createElementCustom("article", [], "", { "id": `containerEjercicio${numEjercicio}` });
 
+/**
+ * Crea un *HTMLElement* personalizado agregando en él las clases, atributos y/o contenido de tipo texto que recibe por parámetro.
+ * @param {String} tipoElemento Nombre del tipo de elemento a crear.
+ * @param {Array<String>} clases Array de strings con los nombres de las clases CSS a agregar al elemento ***opcional***.
+ * @param {String} contenidoTexto Contenido textual del elemento ***opcional***.
+ * @param {Object} atributos Atributos a agregar al elemento en forma de string tanto la clave como el valor ***opcional***.
+ * @returns {HTMLElement} Referencia del **HTMLElement* diseñado.
+ */
 const createElementCustom = (tipoElemento, clases, contenidoTexto, atributos) => {
     const newElement = document.createElement(tipoElemento);
     if (Array.isArray(clases) && clases.length > 0) {
