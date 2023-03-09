@@ -1,0 +1,14 @@
+footer{
+    position: fixed;
+    width: 100%;
+    top: 92.1vh;
+}
+
+#containerEjercicios{
+    width: 900px;
+    margin-left: 23.2vw;
+    border-radius: 8px;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    background-color: rgba(0, 52, 100, 0.226);
+}
