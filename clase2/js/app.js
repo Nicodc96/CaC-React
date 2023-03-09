@@ -1,5 +1,6 @@
 const $imgBatman = document.querySelector("#imgBatman");
 const $btnToggle = document.querySelector("#botonToggle");
+const $textoAyuda = document.querySelector(".texto-ayuda");
 const audioOn = new Audio("./sound/batiEncendido.mp3");
 const audioOff = new Audio("./sound/batiClick.mp3");
 const rutaImgBatmanOn = "./img/batmanON.gif";
@@ -19,6 +20,7 @@ const encender = () => {
     toggleStatus($btnToggle.classList);
     $imgBatman.src = rutaImgBatmanOn;
     audioOn.play();
+    $textoAyuda.textContent = "I'm Batman.";
 };
 
 const apagar = () => {
@@ -27,4 +29,5 @@ const apagar = () => {
     audioOn.pause();
     audioOn.currentTime = 0;
     audioOff.play();
+    $textoAyuda.textContent = "¡Haz click en la linterna!";
 }
