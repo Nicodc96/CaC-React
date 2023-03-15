@@ -213,7 +213,7 @@ const ejercicio3Modal = () => {
     return [divRow, divRow2];
 }
 
-/* Creo el botón y el modal para el ejercicio 2 y lo coloco dentro del contenedor del HTML */
+/* Creo el botón y el modal para el ejercicio 3 y lo coloco dentro del contenedor del HTML */
 const btnEjercicio_3 = crearModalButton(3);
 const contenedorEjercicio_3 = crearContenedorModal(3);
 contenedorEjercicio_3.appendChild(btnEjercicio_3);
@@ -239,7 +239,6 @@ document.querySelector("#btnAgregarPalabra").addEventListener("click", () => {
 
 document.querySelector("#btnMostrarPalabras").addEventListener("click", (e) => {
     e.preventDefault();
-    const inputPalabras = document.querySelector("#inputCadenasTexto");
     const inputRespuestaPalabras = document.querySelector("#inputRespuestaPalabras");
     if (palabras_ej3.length == 0){
         inputRespuestaPalabras.value = "No se guardó ninguna palabra.";
@@ -259,3 +258,157 @@ document.querySelector("#btnLimpiarPalabras").addEventListener("click", () => {
     limpiar_ej3();
 });
 /* FIN del ejercicio 3 */
+
+/*
+    4. Realiza un script que pida números hasta que se pulse “cancelar”. Si no es un número deberá indicarse con un «alert» y seguir pidiendo. 
+    Al salir con “cancelar” deberá indicarse la suma total de los números introducidos.
+*/
+
+const ejercicio4Modal = () => {
+    const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
+    const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
+    const p1 = createElementCustom("p", ["text-center", "fst-italic"], "Realiza un script que pida números hasta que se pulse “cancelar”. Si no es un número deberá indicarse con un «alert» y seguir pidiendo. Al salir con “cancelar” deberá indicarse la suma total de los números introducidos.", {});
+    const divCol1 = createElementCustom("div", ["col", "d-flex", "justify-content-center", "pt-2"], "", {});
+    const buttonEjecutar = createElementCustom("button", ["btn", "btn-primary", "mt-1"], "Ejecutar", { 
+        "type": "submit",
+        "id": "btnEjecutarEj4"
+    });
+    const buttonReiniciar = createElementCustom("button", ["btn", "btn-secondary", "mt-2"], "Reiniciar", { 
+        "type": "button",
+        "id": "btnReiniciarEj4"
+    });
+    /* Uno los elementos según como corresponde */
+    divCol1.appendChild(buttonEjecutar);
+    divRow.appendChild(h3);
+    divRow.appendChild(p1);
+    divRow.appendChild(divCol1);
+    
+    const divRow2 = createElementCustom("div", ["mb-3", "row"], "", {});
+    const labelResult = createElementCustom("label", ["col-sm-3", "col-form-label"], "Respuesta:", { "for":"inputRespEj4" });
+    const divCol2 = createElementCustom("div", ["col-sm-9"], "", {});
+    const inputResult = createElementCustom("input", ["form-control-plaintext"], "", {
+        "type":"text",
+        "readonly":"",
+        "id":"inputRespEj4",
+        "value": "..."
+    });
+    /* Uno los elementos según como corresponde */
+    divCol2.appendChild(inputResult);
+    divCol2.appendChild(buttonReiniciar);
+    divRow2.appendChild(labelResult);
+    divRow2.appendChild(divCol2);
+
+    return [divRow, divRow2];
+}
+
+/* Creo el botón y el modal para el ejercicio 4 y lo coloco dentro del contenedor del HTML */
+const btnEjercicio_4 = crearModalButton(4);
+const contenedorEjercicio_4 = crearContenedorModal(4);
+contenedorEjercicio_4.appendChild(btnEjercicio_4);
+contenedorEjercicio_4.appendChild(crearModal(4, ejercicio4Modal()));
+contenedorEjercicios.appendChild(contenedorEjercicio_4);
+
+/* Lógica del ejercicio 4 */
+let acumulador_ej4 = 0;
+document.querySelector("#btnEjecutarEj4").addEventListener("click", (e) => {
+    e.preventDefault();
+    let continuar = true;
+    let numeroIngresado;
+    const inputRespEj4 = document.querySelector("#inputRespEj4");
+    for (let i = 1; continuar === true; i++){
+        numeroIngresado = prompt(`Ingrese el número ${i}:`);
+        if (numeroIngresado == null){
+            inputRespEj4.value = acumulador_ej4;
+            break;
+        } else{
+            if (isNaN(Number(numeroIngresado))){
+                alert("¡Se debe ingresar un número!");
+                i--;
+            } else{
+                acumulador_ej4 += Number(numeroIngresado);
+            }
+        }
+    }
+});
+document.querySelector("#btnReiniciarEj4").addEventListener("click", () => {
+    document.querySelector("#inputRespEj4").value = "...";
+    acumulador_ej4 = 0;
+});
+
+/*
+    5. Realizar una página con un script que calcule el valor de la letra de un número de DNI (Documento nacional de indentidad).
+*/
+
+const ejercicio5Modal = () =>{
+    const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
+    const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
+    const p1 = createElementCustom("p", ["text-center", "fst-italic"], "Realizar una página con un script que calcule el valor de la letra de un número de DNI (Documento nacional de indentidad). Según el resultado, de 0 a 22, le corresponderá una letra de las siguientes: (T, R, W, A, G, M, Y, F, P, D, X, B, N, J, Z, S, Q, V, H, L, C, K, E) en ese órden. Si lo introducido no es un número deberá indicarse con un alert y volver a preguntar.", {});
+    const divCol1 = createElementCustom("div", ["col", "d-flex", "justify-content-center", "pt-2"], "", {});
+    const buttonEjecutar = createElementCustom("button", ["btn", "btn-primary", "mt-1"], "Ejecutar", { 
+        "type": "submit",
+        "id": "btnEjecutarEj5"
+    });
+    const buttonReiniciar = createElementCustom("button", ["btn", "btn-secondary", "mt-2"], "Reiniciar", { 
+        "type": "button",
+        "id": "btnReiniciarEj5"
+    });
+    /* Uno los elementos según como corresponde */
+    divCol1.appendChild(buttonEjecutar);
+    divRow.appendChild(h3);
+    divRow.appendChild(p1);
+    divRow.appendChild(divCol1);
+    
+    const divRow2 = createElementCustom("div", ["mb-3", "row"], "", {});
+    const labelResult = createElementCustom("label", ["col-sm-3", "col-form-label"], "Respuesta:", { "for":"inputRespEj5" });
+    const divCol2 = createElementCustom("div", ["col-sm-9"], "", {});
+    const inputResult = createElementCustom("input", ["form-control-plaintext"], "", {
+        "type":"text",
+        "readonly":"",
+        "id":"inputRespEj5",
+        "value": "..."
+    });
+    /* Uno los elementos según como corresponde */
+    divCol2.appendChild(inputResult);
+    divCol2.appendChild(buttonReiniciar);
+    divRow2.appendChild(labelResult);
+    divRow2.appendChild(divCol2);
+
+    return [divRow, divRow2];
+}
+
+/* Creo el botón y el modal para el ejercicio 5 y lo coloco dentro del contenedor del HTML */
+const btnEjercicio_5 = crearModalButton(5);
+const contenedorEjercicio_5 = crearContenedorModal(5);
+contenedorEjercicio_5.appendChild(btnEjercicio_5);
+contenedorEjercicio_5.appendChild(crearModal(5, ejercicio5Modal()));
+contenedorEjercicios.appendChild(contenedorEjercicio_5);
+
+/* Lógica del ejercicio 5 */
+const letras_ej5 = [];
+document.querySelector("#btnEjecutarEj5").addEventListener("click", (e) => {
+    e.preventDefault();
+    // (T, R, W, A, G, M, Y, F, P, D, X, B, N, J, Z, S, Q, V, H, L, C, K, E)
+    const valoresLetras = {
+        0:"T", 1:"R", 2:"W", 3:"A", 4:"G", 5:"M", 6:"Y", 7:"F", 8:"P", 9:"D", 10:"X", 11:"B", 12:"N", 13:"J",
+        14:"Z", 15:"S", 16:"Q", 17:"V", 18:"H", 19:"L", 20:"C", 21:"K", 22:"E"
+    }
+    do{
+        let numDNI = prompt("Ingrese un número de DNI (0 a 99.999.999):");
+        if (numDNI == null){
+            if (letras_ej5.length > 0){
+                document.querySelector("#inputRespEj5").value = letras_ej5.join('');
+            }
+            break;
+        }
+        numDNI = Number(numDNI);
+        if (!isNaN(numDNI) && numDNI >= 0 && numDNI <= 99999999){
+            letras_ej5.push(valoresLetras[numDNI % 23]);
+        } else{
+            alert("¡Error! El valor ingresado no es un número o está fuera de los valores.");
+        }
+    }while(true);
+})
+document.querySelector("#btnReiniciarEj5").addEventListener("click", () => {
+    letras_ej5.length = 0;
+    document.querySelector("#inputRespEj5").value = "...";
+});
