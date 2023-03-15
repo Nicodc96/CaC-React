@@ -22,8 +22,6 @@ document.querySelector("#btnIngresarEdad").addEventListener("click", (e) => {
     inputResultado.value = inputEdad.value >= 18 ? "Ya puede conducir, ¡felicidades!" : "No puede conducir, ¡aún es menor!";
 });
 
-/* FIN del ejercicio 1 */
-
 /*
     2. Pide una nota (número). Muestra la calificación según la nota:
         0-3: Muy deficiente
@@ -72,7 +70,6 @@ document.querySelector("#btnIngresarNota").addEventListener("click", (e) => {
         }
     }
 });
-/* FIN del ejercicio 2 */
 
 /*
     3. Realiza un script que pida cadenas de texto hasta que se pulse “Mostrar”. 
@@ -121,7 +118,6 @@ document.querySelector("#btnMostrarPalabras").addEventListener("click", (e) => {
 document.querySelector("#btnLimpiarPalabras").addEventListener("click", () => {
     limpiar_ej3();
 });
-/* FIN del ejercicio 3 */
 
 /*
     4. Realiza un script que pida números hasta que se pulse “cancelar”. Si no es un número deberá indicarse con un «alert» y seguir pidiendo. 
@@ -202,3 +198,33 @@ document.querySelector("#btnReiniciarEj5").addEventListener("click", () => {
     letras_ej5.length = 0;
     document.querySelector("#inputRespEj5").value = "...";
 });
+
+/*
+    6.
+*/
+/* Creo el botón y el modal para el ejercicio 6 y lo coloco dentro del contenedor del HTML */
+/* Lógica del ejercicio 6 */
+
+/*
+    7.
+*/
+/* Creo el botón y el modal para el ejercicio 7 y lo coloco dentro del contenedor del HTML */
+/* Lógica del ejercicio 7 */
+
+/*
+    8.
+*/
+/* Creo el botón y el modal para el ejercicio 8 y lo coloco dentro del contenedor del HTML */
+/* Lógica del ejercicio 8 */
+
+/*
+    9.
+*/
+/* Creo el botón y el modal para el ejercicio 9 y lo coloco dentro del contenedor del HTML */
+/* Lógica del ejercicio 9 */
+
+/*
+    10.
+*/
+/* Creo el botón y el modal para el ejercicio 10 y lo coloco dentro del contenedor del HTML */
+/* Lógica del ejercicio 10 */
