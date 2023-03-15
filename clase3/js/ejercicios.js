@@ -88,21 +88,19 @@ contenedorEjercicios.appendChild(contenedorEjercicio_3);
 
 /* Lógica del ejercicio 3 */
 const palabras_ej3 = [];
-
 const limpiar_ej3 = () => {
     for (let i = 0; i <= palabras_ej3.length; i++){
         palabras_ej3.pop();
     }
     document.querySelector("#inputCadenasTexto").value = "";
     document.querySelector("#inputRespuestaPalabras").value = "...";
-}
+};
 document.querySelector("#btnAgregarPalabra").addEventListener("click", () => {
     if (document.querySelector("#inputCadenasTexto").value){
         palabras_ej3.push(document.querySelector("#inputCadenasTexto").value);
     }
     console.log(palabras_ej3);
 });
-
 document.querySelector("#btnMostrarPalabras").addEventListener("click", (e) => {
     e.preventDefault();
     const inputRespuestaPalabras = document.querySelector("#inputRespuestaPalabras");
@@ -199,7 +197,7 @@ document.querySelector("#btnEjecutarEj5").addEventListener("click", (e) => {
             alert("¡Error! El valor ingresado no es un número o está fuera de los valores.");
         }
     }while(true);
-})
+});
 document.querySelector("#btnReiniciarEj5").addEventListener("click", () => {
     letras_ej5.length = 0;
     document.querySelector("#inputRespEj5").value = "...";
