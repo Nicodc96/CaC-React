@@ -204,6 +204,73 @@ const contenedorModales = {
         divRow2.appendChild(divCol2);
     
         return [divRow, divRow2];
+    },
+    ejercicio6Modal: () => {
+        const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
+        const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
+        const p1 = createElementCustom("p", ["text-center", "fst-italic"], "Realiza un script que escriba una pirámide del 1 hasta el número que se indique.", {});
+        const divCol1 = createElementCustom("div", ["col", "d-flex", "justify-content-center", "pt-2"], "", {});
+        const buttonEjecutar = createElementCustom("button", ["btn", "btn-primary", "mt-1"], "Ejecutar", { 
+            "type": "submit",
+            "id": "btnEjecutarEj6"
+        });
+        const buttonReiniciar = createElementCustom("button", ["btn", "btn-secondary", "mt-2"], "Reiniciar", { 
+            "type": "button",
+            "id": "btnReiniciarEj6"
+        });
+        /* Uno los elementos según como corresponde */
+        divCol1.appendChild(buttonEjecutar);
+        divRow.appendChild(h3);
+        divRow.appendChild(p1);
+        divRow.appendChild(divCol1);
+        
+        const div2 = createElementCustom("div", ["mb-3", "d-flex", "flex-column", "align-items-center"], "", {});
+        const textResult = createElementCustom("p", [], "Respuesta:", {});
+        const pResult = createElementCustom("p", [], "...", { "id":"textRespEj6"});
+        /* Uno los elementos según como corresponde */
+        div2.appendChild(textResult);
+        div2.appendChild(pResult);
+        div2.appendChild(buttonReiniciar);
+    
+        return [divRow, div2];
+    },
+    ejercicio7Modal: () => {
+        const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
+        const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
+        const p1 = createElementCustom("p", ["text-center", "fst-italic"], "Realizar un script que escriba los números del 1 al 100, que indique cuales son múltiplos de 4 y de 9 y que cada 5 líneas muestre una línea horizontal.", {});
+        const divCol1 = createElementCustom("div", ["col", "d-flex", "justify-content-center", "pt-2"], "", {});
+        const buttonEjecutar = createElementCustom("button", ["btn", "btn-primary", "mt-1"], "Ejecutar", { 
+            "type": "button",
+            "id": "btnEjecutarEj7"
+        });
+        const buttonReiniciar = createElementCustom("button", ["btn", "btn-secondary", "mt-2"], "Reiniciar", { 
+            "type": "button",
+            "id": "btnReiniciarEj7"
+        });
+        /* Uno los elementos según como corresponde */
+        divCol1.appendChild(buttonEjecutar);
+        divRow.appendChild(h3);
+        divRow.appendChild(p1);
+        divRow.appendChild(divCol1);
+        
+        const div2 = createElementCustom("div", ["mb-3", "d-flex", "flex-column", "align-items-center"], "", {});
+        const textResult = createElementCustom("p", [], "Respuesta:", {});
+        const pResult = createElementCustom("p", [], "...", { "id":"textRespEj7"});
+        /* Uno los elementos según como corresponde */
+        div2.appendChild(textResult);
+        div2.appendChild(pResult);
+        div2.appendChild(buttonReiniciar);
+    
+        return [divRow, div2];
+    },
+    ejercicio8Modal: () => {
+
+    },
+    ejercicio9Modal: () => {
+
+    },
+    ejercicio10Modal: () => {
+
     }
 }
 

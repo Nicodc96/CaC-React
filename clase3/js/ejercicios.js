@@ -200,31 +200,119 @@ document.querySelector("#btnReiniciarEj5").addEventListener("click", () => {
 });
 
 /*
-    6.
+    6. Realiza un script que escriba una pirámide del 1 hasta el número que se indique de la siguiente forma:
+        1
+        22
+        333
+        4444
+        55555
+        666666
 */
 /* Creo el botón y el modal para el ejercicio 6 y lo coloco dentro del contenedor del HTML */
+const btnEjercicio_6 = crearModalButton(6);
+const contenedorEjercicio_6 = crearContenedorModal(6);
+contenedorEjercicio_6.appendChild(btnEjercicio_6);
+contenedorEjercicio_6.appendChild(crearModal(6, contenedorModales.ejercicio6Modal()));
+contenedorEjercicios.appendChild(contenedorEjercicio_6);
 /* Lógica del ejercicio 6 */
-
+document.querySelector("#btnEjecutarEj6").addEventListener("click", (e) => {
+    e.preventDefault();
+    let numeroIngresado = prompt("Ingrese el número hasta dónde generar la pirámide:");
+    let stringRespuesta = "";
+    if (numeroIngresado !== null){
+        numeroIngresado = Number(numeroIngresado);
+        if (isNaN(numeroIngresado)){
+            alert("¡Se debe ingresar un número para la ejecución del programa!");
+        } else{
+            console.log(numeroIngresado);
+            for (let i = 1; i <= numeroIngresado; i++){
+                let numRepetido = "";
+                for (let j = 1; j <= i; j++){
+                    numRepetido += i;
+                }
+                if (i === numeroIngresado){
+                    stringRespuesta += numRepetido;
+                } else{
+                    stringRespuesta += `${numRepetido}\n`;
+                }
+                numRepetido = "";
+            }
+            document.querySelector("#textRespEj6").innerText = stringRespuesta;
+        }
+    }
+});
+document.querySelector("#btnReiniciarEj6").addEventListener("click", () => {
+    document.querySelector("#textRespEj6").innerText = "...";
+});
 /*
-    7.
+    7. Realizar un script que escriba los números del 1 al número que se indique (máximo 100), que indique cuales son múltiplos de 4 y de 9 y que cada 5 líneas muestre una línea horizontal.
 */
 /* Creo el botón y el modal para el ejercicio 7 y lo coloco dentro del contenedor del HTML */
+const btnEjercicio_7 = crearModalButton(7);
+const contenedorEjercicio_7 = crearContenedorModal(7);
+contenedorEjercicio_7.appendChild(btnEjercicio_7);
+contenedorEjercicio_7.appendChild(crearModal(7, contenedorModales.ejercicio7Modal()));
+contenedorEjercicios.appendChild(contenedorEjercicio_7);
 /* Lógica del ejercicio 7 */
+document.querySelector("#btnEjecutarEj7").addEventListener("click", () => {
+    let numeroIngresado = prompt("Ingrese el número hasta dónde realizar la ejecución (máximo 100):");
+    let stringRespuesta = "";
+    if (numeroIngresado != null){
+        numeroIngresado = Number(numeroIngresado);
+        if (isNaN(numeroIngresado)){
+            alert("¡Se debe ingresar un número para la ejecución del programa!");
+        } else if (numeroIngresado > 100 || numeroIngresado < 1){
+            alert("¡El número debe ser mayor a 1 y como máximo 100!");
+        } else{
+            for (let i = 1; i <= numeroIngresado; i++){
+                stringRespuesta += `${i}`;
+                if (i % 9 == 0){
+                    stringRespuesta += "(múltiplo de 9)\n";
+                } else if (i % 5 == 0){
+                    stringRespuesta += "\n--------------------\n";
+                } else if (i % 4 == 0){
+                    stringRespuesta += `(múltiplo de 4)\n`;
+                } else{
+                    stringRespuesta += "\n";
+                }
+            }
+            document.querySelector("#textRespEj7").innerText = stringRespuesta;
+        }
+    }
+});
+document.querySelector("#btnReiniciarEj7").addEventListener("click", () => {
+    document.querySelector("#textRespEj7").innerText = "...";
+});
 
 /*
     8.
 */
 /* Creo el botón y el modal para el ejercicio 8 y lo coloco dentro del contenedor del HTML */
+const btnEjercicio_8 = crearModalButton(8);
+const contenedorEjercicio_8 = crearContenedorModal(8);
+contenedorEjercicio_8.appendChild(btnEjercicio_8);
+contenedorEjercicio_8.appendChild(crearModal(8, contenedorModales.ejercicio8Modal()));
+contenedorEjercicios.appendChild(contenedorEjercicio_8);
 /* Lógica del ejercicio 8 */
 
 /*
     9.
 */
 /* Creo el botón y el modal para el ejercicio 9 y lo coloco dentro del contenedor del HTML */
+const btnEjercicio_9 = crearModalButton(9);
+const contenedorEjercicio_9 = crearContenedorModal(9);
+contenedorEjercicio_9.appendChild(btnEjercicio_9);
+contenedorEjercicio_9.appendChild(crearModal(9, contenedorModales.ejercicio9Modal()));
+contenedorEjercicios.appendChild(contenedorEjercicio_9);
 /* Lógica del ejercicio 9 */
 
 /*
     10.
 */
 /* Creo el botón y el modal para el ejercicio 10 y lo coloco dentro del contenedor del HTML */
+const btnEjercicio_10 = crearModalButton(10);
+const contenedorEjercicio_10 = crearContenedorModal(10);
+contenedorEjercicio_10.appendChild(btnEjercicio_10);
+contenedorEjercicio_10.appendChild(crearModal(10, contenedorModales.ejercicio10Modal()));
+contenedorEjercicios.appendChild(contenedorEjercicio_10);
 /* Lógica del ejercicio 10 */
