@@ -285,7 +285,9 @@ document.querySelector("#btnReiniciarEj7").addEventListener("click", () => {
 });
 
 /*
-    8.
+    8. Realiza un script que pida número de filas y columnas y escriba una tabla. 
+    Dentro cada una de las celdas deberá escribirse un número consecutivo en orden descendente. 
+    Si, por ejemplo, la tabla es de 7×5 los números irán del 35 al 1.
 */
 /* Creo el botón y el modal para el ejercicio 8 y lo coloco dentro del contenedor del HTML */
 const btnEjercicio_8 = crearModalButton(8);
@@ -296,7 +298,13 @@ contenedorEjercicios.appendChild(contenedorEjercicio_8);
 /* Lógica del ejercicio 8 */
 
 /*
-    9.
+    9. Realiza un script que imprima 14 resultados aleatorios de una quiniela 1 X 2. Ejemplo de resultado:
+        Resultado 1: 1
+        Resultado 2: X
+        Resultado 3: 2
+        ...
+        Resultado 14: 2
+        Además agregar la probabilidad de que salga el 1 sea del 60%, la de la X del 30% y la del 2 del 10%
 */
 /* Creo el botón y el modal para el ejercicio 9 y lo coloco dentro del contenedor del HTML */
 const btnEjercicio_9 = crearModalButton(9);
@@ -307,7 +315,7 @@ contenedorEjercicios.appendChild(contenedorEjercicio_9);
 /* Lógica del ejercicio 9 */
 
 /*
-    10.
+    10. Realiza un script que cuente el número de vocales que tiene un texto.
 */
 /* Creo el botón y el modal para el ejercicio 10 y lo coloco dentro del contenedor del HTML */
 const btnEjercicio_10 = crearModalButton(10);
