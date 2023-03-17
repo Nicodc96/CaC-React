@@ -357,11 +357,11 @@ const contenedorModales = {
     ejercicio10Modal: () => {
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
-        const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Realiza un script que pida cadenas de texto hasta que se pulse “Mostrar”. Al salir con “Mostrar” deben mostrarse todas las cadenas concatenadas con un guión '-'", {});
+        const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Realiza un script que cuente el número de vocales que tiene un texto utilizando expresiones regulares (incluir mayúsculas acentos y ü).", {});
         const label = createElementCustom("label", ["col-sm-3", "col-form-label"], "Ingrese una palabra:", {"for":"inputTextoEj10"});
         const divCol1 = createElementCustom("div", ["col-sm-9"], "", {});
         const divRow1Plus = createElementCustom("div", ["row"], "", {});
-        const divCol1Plus = createElementCustom("div", ["col", "d-flex", "gap-3", "flex-row"], "", {});
+        const divCol1Plus = createElementCustom("div", ["col", "d-flex", "gap-3", "flex-row", "mt-2"], "", {});
         const inputPalabra = createElementCustom("input", ["form-control"], "", {
             "type": "text",
             "id": "inputTextoEj10",
