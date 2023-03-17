@@ -3,7 +3,7 @@ const contenedorModales = {
     ejercicio1Modal: () => {
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
-        const p1 = createElementCustom("p", ["text-center", "fst-italic"], "1. Pedir la edad y si es mayor de 18 años indica que ya puede conducir.", {});
+        const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "1. Pedir la edad y si es mayor de 18 años indica que ya puede conducir.", {});
         const label = createElementCustom("label", ["col-sm-3", "col-form-label"], "Ingrese su edad:", {"for":"inputEdad"});
         const divCol1 = createElementCustom("div", ["col-sm-9"], "", {});
         const inputEdad = createElementCustom("input", ["form-control"], "", {
@@ -44,7 +44,7 @@ const contenedorModales = {
     ejercicio2Modal: () => {
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
-        const p1 = createElementCustom("p", ["text-center", "fst-italic"], "2. Pide una nota (número). Muestra la calificación según la nota:\n0-3: Muy deficiente\n3-5: Insuficiente\n5-6: Suficiente\n6-7: Bien\n7-9: Notable\n9-10: Sobresaliente", {});
+        const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "2. Pide una nota (número). Muestra la calificación según la nota:\n0-3: Muy deficiente\n3-5: Insuficiente\n5-6: Suficiente\n6-7: Bien\n7-9: Notable\n9-10: Sobresaliente", {});
         const label = createElementCustom("label", ["col-sm-3", "col-form-label"], "Ingrese la nota:", {"for":"inputNota"});
         const divCol1 = createElementCustom("div", ["col-sm-9"], "", {});
         const inputNota = createElementCustom("input", ["form-control"], "", {
@@ -83,7 +83,7 @@ const contenedorModales = {
     ejercicio3Modal: () => {
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
-        const p1 = createElementCustom("p", ["text-center", "fst-italic"], "Realiza un script que pida cadenas de texto hasta que se pulse “Mostrar”. Al salir con “Mostrar” deben mostrarse todas las cadenas concatenadas con un guión '-'", {});
+        const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Realiza un script que pida cadenas de texto hasta que se pulse “Mostrar”. Al salir con “Mostrar” deben mostrarse todas las cadenas concatenadas con un guión '-'", {});
         const label = createElementCustom("label", ["col-sm-3", "col-form-label"], "Ingrese una palabra:", {"for":"inputCadenasTexto"});
         const divCol1 = createElementCustom("div", ["col-sm-9"], "", {});
         const divRow1Plus = createElementCustom("div", ["row"], "", {});
@@ -136,7 +136,7 @@ const contenedorModales = {
     ejercicio4Modal: () => {
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
-        const p1 = createElementCustom("p", ["text-center", "fst-italic"], "Realiza un script que pida números hasta que se pulse “cancelar”. Si no es un número deberá indicarse con un «alert» y seguir pidiendo. Al salir con “cancelar” deberá indicarse la suma total de los números introducidos.", {});
+        const p1 = createElementCustom("p", ["text-center", "fst-italic" , "mt-3"], "Realiza un script que pida números hasta que se pulse “cancelar”. Si no es un número deberá indicarse con un «alert» y seguir pidiendo. Al salir con “cancelar” deberá indicarse la suma total de los números introducidos.", {});
         const divCol1 = createElementCustom("div", ["col", "d-flex", "justify-content-center", "pt-2"], "", {});
         const buttonEjecutar = createElementCustom("button", ["btn", "btn-primary", "mt-1"], "Ejecutar", { 
             "type": "submit",
@@ -172,7 +172,7 @@ const contenedorModales = {
     ejercicio5Modal: () => {
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
-        const p1 = createElementCustom("p", ["text-center", "fst-italic"], "Realizar una página con un script que calcule el valor de la letra de un número de DNI (Documento nacional de indentidad). Según el resultado, de 0 a 22, le corresponderá una letra de las siguientes: (T, R, W, A, G, M, Y, F, P, D, X, B, N, J, Z, S, Q, V, H, L, C, K, E) en ese órden. Si lo introducido no es un número deberá indicarse con un alert y volver a preguntar.", {});
+        const p1 = createElementCustom("p", ["text-center", "fst-italic" , "mt-3"], "Realizar una página con un script que calcule el valor de la letra de un número de DNI (Documento nacional de indentidad). Según el resultado, de 0 a 22, le corresponderá una letra de las siguientes: (T, R, W, A, G, M, Y, F, P, D, X, B, N, J, Z, S, Q, V, H, L, C, K, E) en ese órden. Si lo introducido no es un número deberá indicarse con un alert y volver a preguntar.", {});
         const divCol1 = createElementCustom("div", ["col", "d-flex", "justify-content-center", "pt-2"], "", {});
         const buttonEjecutar = createElementCustom("button", ["btn", "btn-primary", "mt-1"], "Ejecutar", { 
             "type": "submit",
@@ -208,7 +208,7 @@ const contenedorModales = {
     ejercicio6Modal: () => {
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
-        const p1 = createElementCustom("p", ["text-center", "fst-italic"], "Realiza un script que escriba una pirámide del 1 hasta el número que se indique.", {});
+        const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Realiza un script que escriba una pirámide del 1 hasta el número que se indique.", {});
         const divCol1 = createElementCustom("div", ["col", "d-flex", "justify-content-center", "pt-2"], "", {});
         const buttonEjecutar = createElementCustom("button", ["btn", "btn-primary", "mt-1"], "Ejecutar", { 
             "type": "submit",
@@ -237,7 +237,7 @@ const contenedorModales = {
     ejercicio7Modal: () => {
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
-        const p1 = createElementCustom("p", ["text-center", "fst-italic"], "Realizar un script que escriba los números del 1 hasta el número que se indique (máximo 100), que indique cuales son múltiplos de 4 y de 9 y que cada 5 líneas muestre una línea horizontal.", {});
+        const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Realizar un script que escriba los números del 1 hasta el número que se indique (máximo 100), que indique cuales son múltiplos de 4 y de 9 y que cada 5 líneas muestre una línea horizontal.", {});
         const divCol1 = createElementCustom("div", ["col", "d-flex", "justify-content-center", "pt-2"], "", {});
         const buttonEjecutar = createElementCustom("button", ["btn", "btn-primary", "mt-1"], "Ejecutar", { 
             "type": "button",
@@ -266,7 +266,7 @@ const contenedorModales = {
     ejercicio8Modal: () => {
         const divRow1 = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
-        const p1 = createElementCustom("p", ["text-center", "fst-italic"], "Realiza un script que pida número de filas y columnas y escriba una tabla. Dentro cada una de las celdas deberá escribirse un número consecutivo en orden descendente. Si, por ejemplo, la tabla es de 7×5 los números irán del 1 al 35.", {});
+        const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Realiza un script que pida número de filas y columnas y escriba una tabla. Dentro cada una de las celdas deberá escribirse un número consecutivo en orden descendente. Si, por ejemplo, la tabla es de 7×5 los números irán del 1 al 35.", {});
         const divRow1_1 = createElementCustom("div", ["row"], "", {});
         const label1_1 = createElementCustom("label", ["col-sm-3", "col-form-label"], "Ingrese filas:", {"for":"inputFilas_ej8"});
         const divCol1_1 = createElementCustom("div", ["col-sm-9"], "", {});
@@ -326,6 +326,33 @@ const contenedorModales = {
         return [divRow1, divRow2, divRow3];
     },
     ejercicio9Modal: () => {
+        const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
+        const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
+        const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Realiza un script que imprima 14 resultados aleatorios de una quiniela 1 X 2. Ejemplo de resultado: Resultado 1: 1, Resultado 2: X, Resultado 3: 2, ..., Resultado 14: 2. Además agregar la probabilidad de que salga el 1 sea del 60%, la de la X del 30% y la del 2 del 10%.", {});
+        const divCol1 = createElementCustom("div", ["col", "d-flex", "justify-content-center", "pt-2"], "", {});
+        const buttonEjecutar = createElementCustom("button", ["btn", "btn-primary", "mt-1"], "Ejecutar", { 
+            "type": "submit",
+            "id": "btnEjecutarEj9"
+        });
+        const buttonReiniciar = createElementCustom("button", ["btn", "btn-secondary", "mt-2"], "Reiniciar", { 
+            "type": "button",
+            "id": "btnReiniciarEj9"
+        });
+        /* Uno los elementos según como corresponde */
+        divCol1.appendChild(buttonEjecutar);
+        divRow.appendChild(h3);
+        divRow.appendChild(p1);
+        divRow.appendChild(divCol1);
+        
+        const div2 = createElementCustom("div", ["mb-3", "d-flex", "flex-column", "align-items-center"], "", {});
+        const textResult = createElementCustom("p", [], "Respuesta:", {});
+        const pResult = createElementCustom("p", [], "...", { "id":"textRespEj9"});
+        /* Uno los elementos según como corresponde */
+        div2.appendChild(textResult);
+        div2.appendChild(pResult);
+        div2.appendChild(buttonReiniciar);
+    
+        return [divRow, div2];
     },
     ejercicio10Modal: () => {
     }

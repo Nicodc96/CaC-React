@@ -353,6 +353,7 @@ contenedorEjercicio_9.appendChild(crearModal(9, contenedorModales.ejercicio9Moda
 contenedorEjercicios.appendChild(contenedorEjercicio_9);
 /* Lógica del ejercicio 9 */
 
+
 /*
     10. Realiza un script que cuente el número de vocales que tiene un texto.
 */
