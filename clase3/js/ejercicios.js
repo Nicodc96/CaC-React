@@ -337,7 +337,7 @@ document.querySelector("#btnReiniciarEj8").addEventListener("click", () => {
 });
 
 /*
-    9. Realiza un script que imprima 14 resultados aleatorios de una quiniela 1 X 2. Ejemplo de resultado:
+    9. Realizar un script que imprima 14 resultados aleatorios de una quiniela 1 X 2. Ejemplo de resultado:
         Resultado 1: 1
         Resultado 2: X
         Resultado 3: 2
@@ -352,7 +352,23 @@ contenedorEjercicio_9.appendChild(btnEjercicio_9);
 contenedorEjercicio_9.appendChild(crearModal(9, contenedorModales.ejercicio9Modal()));
 contenedorEjercicios.appendChild(contenedorEjercicio_9);
 /* Lógica del ejercicio 9 */
-
+document.querySelector("#btnEjecutarEj9").addEventListener("click", () => {
+    const pResult = document.querySelector("#textRespEj9");
+    pResult.innerText = "";
+    for(let i = 1; i <= 14; i++){
+        let num = Math.round(Math.random() * 100)
+        if (num <= 60){
+            pResult.innerText += `Resultado ${i}: 1\n`;
+        } else if (num <= 90){
+            pResult.innerText += `Resultado ${i}: X\n`;
+        } else{
+            pResult.innerText += `Resultado ${i}: 2\n`;
+        }
+    }
+});
+document.querySelector("#btnReiniciarEj9").addEventListener("click", () => {
+    document.querySelector("#textRespEj9").innerText = "...";
+});
 
 /*
     10. Realiza un script que cuente el número de vocales que tiene un texto.
@@ -364,3 +380,17 @@ contenedorEjercicio_10.appendChild(btnEjercicio_10);
 contenedorEjercicio_10.appendChild(crearModal(10, contenedorModales.ejercicio10Modal()));
 contenedorEjercicios.appendChild(contenedorEjercicio_10);
 /* Lógica del ejercicio 10 */
+document.querySelector("#btnContarVocalesEj10").addEventListener("click", () => {
+    const esVocal = letra => letra.length == 1 && /^[aeiouáéíóúü]{1}.*/i.test(letra);
+    const textoInput = document.querySelector("#inputTextoEj10").value;
+    const inputRespuesta = document.querySelector("#inputRespEj10");
+    let contador = 0;
+    for (let i = 0; i < textoInput.length; i++){
+        if (esVocal(textoInput[i])) contador++;
+    }
+    inputRespuesta.value = contador == 0 ? `No hay vocales en el texto ingresado.`: `Hay un total de ${contador} vocales en el texto ingresado.`;
+});
+document.querySelector("#btnReiniciarEj10").addEventListener("click", () => {
+    document.querySelector("#inputRespEj10").value = "...";
+    document.querySelector("#inputTextoEj10").value = "";
+});

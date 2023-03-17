@@ -328,10 +328,10 @@ const contenedorModales = {
     ejercicio9Modal: () => {
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
-        const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Realiza un script que imprima 14 resultados aleatorios de una quiniela 1 X 2. Ejemplo de resultado: Resultado 1: 1, Resultado 2: X, Resultado 3: 2, ..., Resultado 14: 2. Además agregar la probabilidad de que salga el 1 sea del 60%, la de la X del 30% y la del 2 del 10%.", {});
+        const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Realizar un script que imprima 14 resultados aleatorios de una quiniela 1 X 2. Ejemplo de resultado: Resultado 1: 1, Resultado 2: X, Resultado 3: 2, ..., Resultado 14: 2. Además agregar la probabilidad de que salga el 1 sea del 60%, la de la X del 30% y la del 2 del 10%.", {});
         const divCol1 = createElementCustom("div", ["col", "d-flex", "justify-content-center", "pt-2"], "", {});
         const buttonEjecutar = createElementCustom("button", ["btn", "btn-primary", "mt-1"], "Ejecutar", { 
-            "type": "submit",
+            "type": "button",
             "id": "btnEjecutarEj9"
         });
         const buttonReiniciar = createElementCustom("button", ["btn", "btn-secondary", "mt-2"], "Reiniciar", { 
@@ -355,6 +355,52 @@ const contenedorModales = {
         return [divRow, div2];
     },
     ejercicio10Modal: () => {
+        const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
+        const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
+        const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Realiza un script que pida cadenas de texto hasta que se pulse “Mostrar”. Al salir con “Mostrar” deben mostrarse todas las cadenas concatenadas con un guión '-'", {});
+        const label = createElementCustom("label", ["col-sm-3", "col-form-label"], "Ingrese una palabra:", {"for":"inputTextoEj10"});
+        const divCol1 = createElementCustom("div", ["col-sm-9"], "", {});
+        const divRow1Plus = createElementCustom("div", ["row"], "", {});
+        const divCol1Plus = createElementCustom("div", ["col", "d-flex", "gap-3", "flex-row"], "", {});
+        const inputPalabra = createElementCustom("input", ["form-control"], "", {
+            "type": "text",
+            "id": "inputTextoEj10",
+            "placeholder": "Ingrese una palabra..."
+        });
+        const buttonContar = createElementCustom("button", ["btn", "btn-primary", "mt-1"], "Contar Vocales", { 
+            "type": "button",
+            "id": "btnContarVocalesEj10"
+        });
+        const buttonReiniciar = createElementCustom("button", ["btn", "btn-secondary", "mt-1"], "Reiniciar", {
+            "type": "button",
+            "id": "btnReiniciarEj10"
+        })
+        /* Uno los elementos según como corresponde */
+        divCol1.appendChild(inputPalabra);
+        divCol1.appendChild(divRow1Plus);
+        divRow1Plus.appendChild(divCol1Plus);
+        divCol1Plus.appendChild(buttonContar);
+        divCol1Plus.appendChild(buttonReiniciar);
+        divRow.appendChild(h3);
+        divRow.appendChild(p1);
+        divRow.appendChild(label);
+        divRow.appendChild(divCol1);
+        
+        const divRow2 = createElementCustom("div", ["mb-3", "row"], "", {});
+        const labelResult = createElementCustom("label", ["col-sm-3", "col-form-label"], "Respuesta:", { "for":"inputRespEj10" });
+        const divCol2 = createElementCustom("div", ["col-sm-9"], "", {});
+        const inputResult = createElementCustom("input", ["form-control-plaintext"], "", {
+            "type":"text",
+            "readonly":"",
+            "id":"inputRespEj10",
+            "value": "..."
+        });
+        /* Uno los elementos según como corresponde */
+        divCol2.appendChild(inputResult);
+        divRow2.appendChild(labelResult);
+        divRow2.appendChild(divCol2);
+    
+        return [divRow, divRow2];
     }
 }
 
