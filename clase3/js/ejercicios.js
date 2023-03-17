@@ -267,11 +267,11 @@ document.querySelector("#btnEjecutarEj7").addEventListener("click", () => {
             for (let i = 1; i <= numeroIngresado; i++){
                 stringRespuesta += `${i}`;
                 if (i % 9 == 0){
-                    stringRespuesta += "(múltiplo de 9)\n";
+                    stringRespuesta += " (múltiplo de 9)\n";
                 } else if (i % 5 == 0){
                     stringRespuesta += "\n--------------------\n";
                 } else if (i % 4 == 0){
-                    stringRespuesta += `(múltiplo de 4)\n`;
+                    stringRespuesta += " (múltiplo de 4)\n";
                 } else{
                     stringRespuesta += "\n";
                 }
@@ -296,6 +296,43 @@ contenedorEjercicio_8.appendChild(btnEjercicio_8);
 contenedorEjercicio_8.appendChild(crearModal(8, contenedorModales.ejercicio8Modal()));
 contenedorEjercicios.appendChild(contenedorEjercicio_8);
 /* Lógica del ejercicio 8 */
+document.querySelector("#btnIngresarEj8").addEventListener("click", () => {
+    const tabla = createElementCustom("table", ["table"], "", {});
+    const tbody = createElementCustom("thead", [], "", {});
+    const valorInputFilas = Number(document.querySelector("#inputFilas_ej8").value);
+    const valorInputColumnas = Number(document.querySelector("#inputColumnas_ej8").value);
+    if (isNaN(valorInputColumnas) || isNaN(valorInputFilas)){
+        alert("Error! Se debe ingresar un número válido.");
+    } else if (valorInputColumnas > 18 || valorInputFilas > 18){
+        alert("Error! Maximo 18 filas y 18 columnas!");
+    }
+    else{
+        limpiar_ej8();
+        let ultimoValorColumna = 0;
+        for (let i = 1; i <= valorInputFilas; i++){
+            let tr = createElementCustom("tr", [], "", {});
+            for (let j = 1; j <= valorInputColumnas; j++){
+                ultimoValorColumna++;
+                let td = createElementCustom("td", [], ultimoValorColumna.toString(), {});
+                tr.appendChild(td);
+            }
+            tbody.appendChild(tr);
+        }
+        tabla.appendChild(tbody);
+        document.querySelector("#divRespEj8").appendChild(tabla);
+    }
+});
+const limpiar_ej8 = () => {
+    const divRespEj8 = document.querySelector("#divRespEj8");
+    if (divRespEj8.hasChildNodes()){
+        divRespEj8.removeChild(divRespEj8.firstElementChild);
+    }
+    document.querySelector("#inputColumnas_ej8").value = "";
+    document.querySelector("#inputFilas_ej8").value = "";
+}
+document.querySelector("#btnReiniciarEj8").addEventListener("click", () => {
+    limpiar_ej8();
+});
 
 /*
     9. Realiza un script que imprima 14 resultados aleatorios de una quiniela 1 X 2. Ejemplo de resultado:

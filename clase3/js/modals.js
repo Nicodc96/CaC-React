@@ -237,7 +237,7 @@ const contenedorModales = {
     ejercicio7Modal: () => {
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
-        const p1 = createElementCustom("p", ["text-center", "fst-italic"], "Realizar un script que escriba los números del 1 al 100, que indique cuales son múltiplos de 4 y de 9 y que cada 5 líneas muestre una línea horizontal.", {});
+        const p1 = createElementCustom("p", ["text-center", "fst-italic"], "Realizar un script que escriba los números del 1 hasta el número que se indique (máximo 100), que indique cuales son múltiplos de 4 y de 9 y que cada 5 líneas muestre una línea horizontal.", {});
         const divCol1 = createElementCustom("div", ["col", "d-flex", "justify-content-center", "pt-2"], "", {});
         const buttonEjecutar = createElementCustom("button", ["btn", "btn-primary", "mt-1"], "Ejecutar", { 
             "type": "button",
@@ -264,13 +264,70 @@ const contenedorModales = {
         return [divRow, div2];
     },
     ejercicio8Modal: () => {
+        const divRow1 = createElementCustom("div", ["mb-3", "row"], "", {});
+        const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
+        const p1 = createElementCustom("p", ["text-center", "fst-italic"], "Realiza un script que pida número de filas y columnas y escriba una tabla. Dentro cada una de las celdas deberá escribirse un número consecutivo en orden descendente. Si, por ejemplo, la tabla es de 7×5 los números irán del 35 al 1.", {});
+        const divRow1_1 = createElementCustom("div", ["row"], "", {});
+        const label1_1 = createElementCustom("label", ["col-sm-3", "col-form-label"], "Ingrese filas:", {"for":"inputFilas_ej8"});
+        const divCol1_1 = createElementCustom("div", ["col-sm-9"], "", {});
+        const inputFilas_ej8 = createElementCustom("input", ["form-control"], "", {
+            "type": "number",
+            "id": "inputFilas_ej8",
+            "placeholder": "Máximo 18 filas",
+            "min":"1",
+            "max":"18"
+        });
+        const divRow1_2 = createElementCustom("div", ["row", "mt-2"], "", {});
+        const label1_2 = createElementCustom("label", ["col-sm-3", "col-form-label"], "Ingrese columnas:", {"for":"inputColumnas_ej8"});
+        const divCol1_2 = createElementCustom("div", ["col-sm-9"], "", {});
+        const inputColumnas_ej8 = createElementCustom("input", ["form-control"], "", {
+            "type": "number",
+            "id": "inputColumnas_ej8",
+            "placeholder": "Máximo 18 columnas",
+            "min":"1",
+            "max":"18"
+        });
+        /* Uno los elementos según como corresponde */        
 
+        divRow1.appendChild(h3);
+        divRow1.appendChild(p1);
+        divRow1.appendChild(divRow1_1);
+        divRow1.appendChild(divRow1_2);
+        divRow1_1.appendChild(label1_1);
+        divRow1_1.appendChild(divCol1_1);
+        divCol1_1.appendChild(inputFilas_ej8);
+        divRow1_2.appendChild(label1_2);
+        divRow1_2.appendChild(divCol1_2);
+        divCol1_2.appendChild(inputColumnas_ej8);
+        
+        const divRow2 = createElementCustom("div", ["mb-3", "row"], "", {});
+        const divCol2 = createElementCustom("div", ["col", "d-flex", "flex-column", "align-items-center"], "", {});
+        const pResult = createElementCustom("p", [], "Respuesta:", {});
+        const divResult = createElementCustom("div", ["mt-2", "d-flex", "justify-content-center"], "", { "id":"divRespEj8" });
+        const divRow3 = createElementCustom("div", ["row"], "", {});
+        const divCol3 = createElementCustom("div", ["col", "d-flex", "justify-content-center", "gap-2"], "", {});
+        const buttonSubmit = createElementCustom("button", ["btn", "btn-success", "mt-2"], "Ingresar", { 
+            "type":"button",
+            "id": "btnIngresarEj8"
+        });
+        const buttonReiniciar = createElementCustom("button", ["btn", "btn-secondary", "mt-2"], "Reiniciar", { 
+            "type":"button",
+            "id": "btnReiniciarEj8"
+        });
+        /* Uno los elementos según como corresponde */
+        divRow2.appendChild(divCol2);
+        divRow2.appendChild(divCol2);
+        divCol2.appendChild(pResult);
+        divCol2.appendChild(divResult);
+        divRow3.appendChild(divCol3);
+        divCol3.appendChild(buttonSubmit);
+        divCol3.appendChild(buttonReiniciar);
+    
+        return [divRow1, divRow2, divRow3];
     },
     ejercicio9Modal: () => {
-
     },
     ejercicio10Modal: () => {
-
     }
 }
 
