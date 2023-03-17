@@ -245,7 +245,8 @@ document.querySelector("#btnReiniciarEj6").addEventListener("click", () => {
     document.querySelector("#textRespEj6").innerText = "...";
 });
 /*
-    7. Realizar un script que escriba los números del 1 al número que se indique (máximo 100), que indique cuales son múltiplos de 4 y de 9 y que cada 5 líneas muestre una línea horizontal.
+    7. Realizar un script que escriba los números del 1 al número que se indique (máximo 100), 
+    que indique cuales son múltiplos de 4 y de 9 y que cada 5 líneas muestre una línea horizontal.
 */
 /* Creo el botón y el modal para el ejercicio 7 y lo coloco dentro del contenedor del HTML */
 const btnEjercicio_7 = crearModalButton(7);
@@ -287,7 +288,7 @@ document.querySelector("#btnReiniciarEj7").addEventListener("click", () => {
 /*
     8. Realiza un script que pida número de filas y columnas y escriba una tabla. 
     Dentro cada una de las celdas deberá escribirse un número consecutivo en orden descendente. 
-    Si, por ejemplo, la tabla es de 7×5 los números irán del 35 al 1.
+    Si, por ejemplo, la tabla es de 7×5 los números irán del 1 al 35.
 */
 /* Creo el botón y el modal para el ejercicio 8 y lo coloco dentro del contenedor del HTML */
 const btnEjercicio_8 = crearModalButton(8);
@@ -297,8 +298,8 @@ contenedorEjercicio_8.appendChild(crearModal(8, contenedorModales.ejercicio8Moda
 contenedorEjercicios.appendChild(contenedorEjercicio_8);
 /* Lógica del ejercicio 8 */
 document.querySelector("#btnIngresarEj8").addEventListener("click", () => {
-    const tabla = createElementCustom("table", ["table"], "", {});
-    const tbody = createElementCustom("thead", [], "", {});
+    const tabla = createElementCustom("table", ["table", "table-striped", "table-dark", "mb-0"], "", {});
+    const tbody = createElementCustom("tbody", [], "", {});
     const valorInputFilas = Number(document.querySelector("#inputFilas_ej8").value);
     const valorInputColumnas = Number(document.querySelector("#inputColumnas_ej8").value);
     if (isNaN(valorInputColumnas) || isNaN(valorInputFilas)){
@@ -311,6 +312,7 @@ document.querySelector("#btnIngresarEj8").addEventListener("click", () => {
         let ultimoValorColumna = 0;
         for (let i = 1; i <= valorInputFilas; i++){
             let tr = createElementCustom("tr", [], "", {});
+            i % 2 == 0 ? tr.classList.toggle("a") : tr.classList.toggle("b");
             for (let j = 1; j <= valorInputColumnas; j++){
                 ultimoValorColumna++;
                 let td = createElementCustom("td", [], ultimoValorColumna.toString(), {});
