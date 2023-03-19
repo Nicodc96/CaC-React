@@ -1,6 +1,11 @@
 import { createElementCustom } from "./elementos.js"
-const contenedorModales = {
-    ejercicio1Modal: () => {
+/**
+ * Array que contiene las funciones que generan el contenido necesario para los ejercicios, de orden 0 - N 
+ * *(siendo N un número natural indeterminado)*
+ */
+const contenedorModales = [
+    function(){
+        // 1
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
         const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "1. Pedir la edad y si es mayor de 18 años indica que ya puede conducir.", {});
@@ -41,7 +46,8 @@ const contenedorModales = {
     
         return [divRow, divRow2];
     },
-    ejercicio2Modal: () => {
+    function(){
+        // 2
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
         const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "2. Pide una nota (número). Muestra la calificación según la nota:\n0-3: Muy deficiente\n3-5: Insuficiente\n5-6: Suficiente\n6-7: Bien\n7-9: Notable\n9-10: Sobresaliente", {});
@@ -80,7 +86,8 @@ const contenedorModales = {
     
         return [divRow, divRow2];
     },
-    ejercicio3Modal: () => {
+    function(){
+        // 3
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
         const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Realiza un script que pida cadenas de texto hasta que se pulse “Mostrar”. Al salir con “Mostrar” deben mostrarse todas las cadenas concatenadas con un guión '-'", {});
@@ -133,7 +140,8 @@ const contenedorModales = {
     
         return [divRow, divRow2];
     },
-    ejercicio4Modal: () => {
+    function(){
+        // 4
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
         const p1 = createElementCustom("p", ["text-center", "fst-italic" , "mt-3"], "Realiza un script que pida números hasta que se pulse “cancelar”. Si no es un número deberá indicarse con un «alert» y seguir pidiendo. Al salir con “cancelar” deberá indicarse la suma total de los números introducidos.", {});
@@ -169,7 +177,8 @@ const contenedorModales = {
     
         return [divRow, divRow2];
     },
-    ejercicio5Modal: () => {
+    function(){
+        // 5
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
         const p1 = createElementCustom("p", ["text-center", "fst-italic" , "mt-3"], "Realizar una página con un script que calcule el valor de la letra de un número de DNI (Documento nacional de indentidad). Según el resultado, de 0 a 22, le corresponderá una letra de las siguientes: (T, R, W, A, G, M, Y, F, P, D, X, B, N, J, Z, S, Q, V, H, L, C, K, E) en ese órden. Si lo introducido no es un número deberá indicarse con un alert y volver a preguntar.", {});
@@ -205,7 +214,8 @@ const contenedorModales = {
     
         return [divRow, divRow2];
     },
-    ejercicio6Modal: () => {
+    function(){
+        // 6
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
         const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Realiza un script que escriba una pirámide del 1 hasta el número que se indique.", {});
@@ -234,7 +244,8 @@ const contenedorModales = {
     
         return [divRow, div2];
     },
-    ejercicio7Modal: () => {
+    function(){
+        // 7
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
         const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Realizar un script que escriba los números del 1 hasta el número que se indique (máximo 100), que indique cuales son múltiplos de 4 y de 9 y que cada 5 líneas muestre una línea horizontal.", {});
@@ -263,7 +274,8 @@ const contenedorModales = {
     
         return [divRow, div2];
     },
-    ejercicio8Modal: () => {
+    function(){
+        // 8
         const divRow1 = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
         const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Realiza un script que pida número de filas y columnas y escriba una tabla. Dentro cada una de las celdas deberá escribirse un número consecutivo en orden descendente. Si, por ejemplo, la tabla es de 7×5 los números irán del 1 al 35.", {});
@@ -325,7 +337,8 @@ const contenedorModales = {
     
         return [divRow1, divRow2, divRow3];
     },
-    ejercicio9Modal: () => {
+    function(){
+        // 9
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
         const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Realizar un script que imprima 14 resultados aleatorios de una quiniela 1 X 2. Ejemplo de resultado: Resultado 1: 1, Resultado 2: X, Resultado 3: 2, ..., Resultado 14: 2. Además agregar la probabilidad de que salga el 1 sea del 60%, la de la X del 30% y la del 2 del 10%.", {});
@@ -354,7 +367,8 @@ const contenedorModales = {
     
         return [divRow, div2];
     },
-    ejercicio10Modal: () => {
+    function(){
+        // 10
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
         const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Realiza un script que cuente el número de vocales que tiene un texto utilizando expresiones regulares (incluir mayúsculas acentos y ü).", {});
@@ -401,7 +415,22 @@ const contenedorModales = {
         divRow2.appendChild(divCol2);
     
         return [divRow, divRow2];
+    },
+    function(){
+        // 11
+    },
+    function(){
+        // 12
+    },
+    function(){
+        // 13
+    },
+    function(){
+        // 14
+    },
+    function(){
+        // 15
     }
-}
+]
 
-export default contenedorModales;
+export {contenedorModales };

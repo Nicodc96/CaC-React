@@ -1,25 +1,27 @@
-import { crearModal, crearContenedorModal, crearModalButton, createElementCustom } from "./elementos.js";
-import contenedorModales from "./modals.js";
+import { createElementCustom } from "./elementos.js";
+import { contenedorModales } from "./modals.js";
+import { cargarElementosEjerciciosAlDom } from "./ejercicios_dom.js";
 const contenedorEjercicios = document.querySelector("#containerEjercicios");
+const CANT_EJERCICIOS_ACTUAL = 10;
 
 ////////////////////// Zona desarrollo de ejercicios //////////////////////
 /*
     1. Pedir la edad y si es mayor de 18 años indica que ya puede conducir.
 */
 
-/* Creo el botón y el modal para el ejercicio 1 y lo coloco dentro del contenedor del HTML */ 
-const btnEjercicio_1 = crearModalButton(1);
-const contenedorEjercicio_1 = crearContenedorModal(1);
-contenedorEjercicio_1.appendChild(btnEjercicio_1);
-contenedorEjercicio_1.appendChild(crearModal(1, contenedorModales.ejercicio1Modal()));
-contenedorEjercicios.appendChild(contenedorEjercicio_1);
+/* ------ Cargo elementos necesarios para armar los modals de los ejercicios al DOM ------ */
+for (let i = 1; i <= CANT_EJERCICIOS_ACTUAL; i++){
+    cargarElementosEjerciciosAlDom(contenedorEjercicios, i, contenedorModales[i-1]());
+}
 
 /* Lógica del ejercicio 1 */
 document.querySelector("#btnIngresarEdad").addEventListener("click", (e) => {
     e.preventDefault();
     const inputEdad = document.querySelector("#inputEdad");
     const inputResultado = document.querySelector("#inputRespuestaEdad");
-    inputResultado.value = inputEdad.value >= 18 ? "Ya puede conducir, ¡felicidades!" : "No puede conducir, ¡aún es menor!";
+    if (inputEdad.value == null || inputEdad.value == ""){
+        inputResultado.value = "¡Debe ingresar una edad!"
+    } else inputResultado.value = inputEdad.value >= 18 ? "Ya puede conducir, ¡felicidades!" : "No puede conducir, ¡aún es menor!";
 });
 
 /*
@@ -31,13 +33,6 @@ document.querySelector("#btnIngresarEdad").addEventListener("click", (e) => {
         7-9: Destacado
         9-10: Sobresaliente
 */
-
-/* Creo el botón y el modal para el ejercicio 2 y lo coloco dentro del contenedor del HTML */ 
-const btnEjercicio_2 = crearModalButton(2);
-const contenedorEjercicio_2 = crearContenedorModal(2);
-contenedorEjercicio_2.appendChild(btnEjercicio_2);
-contenedorEjercicio_2.appendChild(crearModal(2, contenedorModales.ejercicio2Modal()));
-contenedorEjercicios.appendChild(contenedorEjercicio_2);
 
 /* Lógica del ejercicio 2 */
 document.querySelector("#btnIngresarNota").addEventListener("click", (e) => {
@@ -75,13 +70,6 @@ document.querySelector("#btnIngresarNota").addEventListener("click", (e) => {
     3. Realiza un script que pida cadenas de texto hasta que se pulse “Mostrar”. 
     Al salir con “Mostrar” deben mostrarse todas las cadenas concatenadas con un guión '-'
 */
-
-/* Creo el botón y el modal para el ejercicio 3 y lo coloco dentro del contenedor del HTML */
-const btnEjercicio_3 = crearModalButton(3);
-const contenedorEjercicio_3 = crearContenedorModal(3);
-contenedorEjercicio_3.appendChild(btnEjercicio_3);
-contenedorEjercicio_3.appendChild(crearModal(3, contenedorModales.ejercicio3Modal()));
-contenedorEjercicios.appendChild(contenedorEjercicio_3);
 
 /* Lógica del ejercicio 3 */
 const palabras_ej3 = [];
@@ -124,13 +112,6 @@ document.querySelector("#btnLimpiarPalabras").addEventListener("click", () => {
     Al salir con “cancelar” deberá indicarse la suma total de los números introducidos.
 */
 
-/* Creo el botón y el modal para el ejercicio 4 y lo coloco dentro del contenedor del HTML */
-const btnEjercicio_4 = crearModalButton(4);
-const contenedorEjercicio_4 = crearContenedorModal(4);
-contenedorEjercicio_4.appendChild(btnEjercicio_4);
-contenedorEjercicio_4.appendChild(crearModal(4, contenedorModales.ejercicio4Modal()));
-contenedorEjercicios.appendChild(contenedorEjercicio_4);
-
 /* Lógica del ejercicio 4 */
 let acumulador_ej4 = 0;
 document.querySelector("#btnEjecutarEj4").addEventListener("click", (e) => {
@@ -161,13 +142,6 @@ document.querySelector("#btnReiniciarEj4").addEventListener("click", () => {
 /*
     5. Realizar una página con un script que calcule el valor de la letra de un número de DNI (Documento nacional de indentidad).
 */
-
-/* Creo el botón y el modal para el ejercicio 5 y lo coloco dentro del contenedor del HTML */
-const btnEjercicio_5 = crearModalButton(5);
-const contenedorEjercicio_5 = crearContenedorModal(5);
-contenedorEjercicio_5.appendChild(btnEjercicio_5);
-contenedorEjercicio_5.appendChild(crearModal(5, contenedorModales.ejercicio5Modal()));
-contenedorEjercicios.appendChild(contenedorEjercicio_5);
 
 /* Lógica del ejercicio 5 */
 const letras_ej5 = [];
@@ -208,12 +182,7 @@ document.querySelector("#btnReiniciarEj5").addEventListener("click", () => {
         55555
         666666
 */
-/* Creo el botón y el modal para el ejercicio 6 y lo coloco dentro del contenedor del HTML */
-const btnEjercicio_6 = crearModalButton(6);
-const contenedorEjercicio_6 = crearContenedorModal(6);
-contenedorEjercicio_6.appendChild(btnEjercicio_6);
-contenedorEjercicio_6.appendChild(crearModal(6, contenedorModales.ejercicio6Modal()));
-contenedorEjercicios.appendChild(contenedorEjercicio_6);
+
 /* Lógica del ejercicio 6 */
 document.querySelector("#btnEjecutarEj6").addEventListener("click", (e) => {
     e.preventDefault();
@@ -248,12 +217,7 @@ document.querySelector("#btnReiniciarEj6").addEventListener("click", () => {
     7. Realizar un script que escriba los números del 1 al número que se indique (máximo 100), 
     que indique cuales son múltiplos de 4 y de 9 y que cada 5 líneas muestre una línea horizontal.
 */
-/* Creo el botón y el modal para el ejercicio 7 y lo coloco dentro del contenedor del HTML */
-const btnEjercicio_7 = crearModalButton(7);
-const contenedorEjercicio_7 = crearContenedorModal(7);
-contenedorEjercicio_7.appendChild(btnEjercicio_7);
-contenedorEjercicio_7.appendChild(crearModal(7, contenedorModales.ejercicio7Modal()));
-contenedorEjercicios.appendChild(contenedorEjercicio_7);
+
 /* Lógica del ejercicio 7 */
 document.querySelector("#btnEjecutarEj7").addEventListener("click", () => {
     let numeroIngresado = prompt("Ingrese el número hasta dónde realizar la ejecución (máximo 100):");
@@ -290,12 +254,7 @@ document.querySelector("#btnReiniciarEj7").addEventListener("click", () => {
     Dentro cada una de las celdas deberá escribirse un número consecutivo en orden descendente. 
     Si, por ejemplo, la tabla es de 7×5 los números irán del 1 al 35.
 */
-/* Creo el botón y el modal para el ejercicio 8 y lo coloco dentro del contenedor del HTML */
-const btnEjercicio_8 = crearModalButton(8);
-const contenedorEjercicio_8 = crearContenedorModal(8);
-contenedorEjercicio_8.appendChild(btnEjercicio_8);
-contenedorEjercicio_8.appendChild(crearModal(8, contenedorModales.ejercicio8Modal()));
-contenedorEjercicios.appendChild(contenedorEjercicio_8);
+
 /* Lógica del ejercicio 8 */
 document.querySelector("#btnIngresarEj8").addEventListener("click", () => {
     const tabla = createElementCustom("table", ["table", "table-striped", "table-dark", "mb-0"], "", {});
@@ -345,12 +304,7 @@ document.querySelector("#btnReiniciarEj8").addEventListener("click", () => {
         Resultado 14: 2
         Además agregar la probabilidad de que salga el 1 sea del 60%, la de la X del 30% y la del 2 del 10%
 */
-/* Creo el botón y el modal para el ejercicio 9 y lo coloco dentro del contenedor del HTML */
-const btnEjercicio_9 = crearModalButton(9);
-const contenedorEjercicio_9 = crearContenedorModal(9);
-contenedorEjercicio_9.appendChild(btnEjercicio_9);
-contenedorEjercicio_9.appendChild(crearModal(9, contenedorModales.ejercicio9Modal()));
-contenedorEjercicios.appendChild(contenedorEjercicio_9);
+
 /* Lógica del ejercicio 9 */
 document.querySelector("#btnEjecutarEj9").addEventListener("click", () => {
     const pResult = document.querySelector("#textRespEj9");
@@ -373,12 +327,7 @@ document.querySelector("#btnReiniciarEj9").addEventListener("click", () => {
 /*
     10. Realiza un script que cuente el número de vocales que tiene un texto.
 */
-/* Creo el botón y el modal para el ejercicio 10 y lo coloco dentro del contenedor del HTML */
-const btnEjercicio_10 = crearModalButton(10);
-const contenedorEjercicio_10 = crearContenedorModal(10);
-contenedorEjercicio_10.appendChild(btnEjercicio_10);
-contenedorEjercicio_10.appendChild(crearModal(10, contenedorModales.ejercicio10Modal()));
-contenedorEjercicios.appendChild(contenedorEjercicio_10);
+
 /* Lógica del ejercicio 10 */
 document.querySelector("#btnContarVocalesEj10").addEventListener("click", () => {
     const esVocal = letra => letra.length == 1 && /^[aeiouáéíóúü]{1}.*/i.test(letra);
