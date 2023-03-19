@@ -430,6 +430,21 @@ const contenedorModales = [
     },
     function(){
         // 15
+    },
+    function(){
+        // 16
+    },
+    function(){
+        // 17
+    },
+    function(){
+        // 18
+    },
+    function(){
+        // 19
+    },
+    function(){
+        // 20
     }
 ]
 

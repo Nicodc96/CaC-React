@@ -2,7 +2,7 @@ import { createElementCustom } from "./elementos.js";
 import { contenedorModales } from "./modals.js";
 import { cargarElementosEjerciciosAlDom } from "./ejercicios_dom.js";
 const contenedorEjercicios = document.querySelector("#containerEjercicios");
-const CANT_EJERCICIOS_ACTUAL = 10;
+const CANT_EJERCICIOS_ACTUAL = 20;
 
 ////////////////////// Zona desarrollo de ejercicios //////////////////////
 /*
