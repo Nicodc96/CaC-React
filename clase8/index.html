@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <title>Codo a Codo - React | Clase 8</title>
+</head>
+<body>
+    <header class="text-center">
+        <h1>Práctica de consumo de API</h1>
+        <hr>
+        <h2 class="fs-3 fst-italic">Fetch, Axios & XMLHTTPRequest</h2>
+    </header>
+    <main>
+        <section id="contenedorBotonesSolicitudes">
+            <article class="row container-fluid">
+                <div class="col-2">
+                    <label for="inputTraerPostId">Traer un post por ID:</label>
+                    <input type="number" id="inputTraerPostId" class="form-control">
+                    <button type="button" id="btnTraerPostId" class="btn btn-primary mt-2">Solicitar</button>
+                </div>   
+                <div class="col-2">
+                    <label for="intputTraerPostUserId">Traer un post por UserID:</label>
+                    <input type="number" id="inputTraerPostUserId" class="form-control">
+                    <button type="button" id="btnTraerPostUserId" class="btn btn-primary mt-2">Solicitar</button>
+                </div>   
+            </article>
+        </section>
+        <section id="listaPosteos" class="container-fluid w-50"></section>
+    </main>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="./app.js" type="module"></script>
+</body>
+</html>
