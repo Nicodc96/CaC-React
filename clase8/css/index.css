@@ -1,0 +1,11 @@
+#divContainerTablePosts{
+    border-radius: 8px !important;
+    height: max-content;
+}
+#divContainerTablePosts > table{
+    width: 75vw;
+    height: auto;
+}
+.gap-custom-1{
+    gap: 4.1vh;
+}
