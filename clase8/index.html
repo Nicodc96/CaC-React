@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Codo a Codo - React | Clase 8</title>
+</head>
+<body>
+    <header class="bg-dark text-white text-center pb-4">
+        <h1 class="pt-2">Práctica de consumo de API</h1>
+        <h2 class="fs-5 fst-italic mb-0">Method: Fetch</h2>
+    </header>
+    <main>
+        <section class="container-fluid d-flex justify-content-center mt-4">
+            <img src="https://www.freecodecamp.org/espanol/news/content/images/2022/04/wall-2.jpeg" width="200px"/>
+        </section>
+        <section id="containerPostReqBtn" class="mt-5">
+            <div class="mt-3 mb-5">
+                <h3 class="text-center">Peticiones a POSTS</h3>
+                <h5 class="text-center">Peticiones realizadas a: 
+                    <a href="https://jsonplaceholder.typicode.com/post" class="fst-italic">https://jsonplaceholder.typicode.com/post</a>
+                </h5>
+            </div>
+            <article class="row w-100 d-flex justify-content-center">
+                <div class="col-4 d-flex flex-column align-items-center">
+                    <label for="inputTraerPostId">Traer un post por ID:</label>
+                    <input type="number" id="inputTraerPostId" class="form-control">
+                    <button type="button" id="btnTraerPostId" class="btn btn-primary mt-2">Solicitar</button>
+                </div>   
+                <div class="col-4 d-flex flex-column align-items-center">
+                    <label for="intputTraerPostUserId">Traer los posts según UserID:</label>
+                    <input type="number" id="inputTraerPostUserId" class="form-control" min="0" max="10">
+                    <button type="button" id="btnTraerPostUserId" class="btn btn-primary mt-2">Solicitar</button>
+                </div>
+            </article>
+            <section id="listaPosteos" class="mt-3 mb-3 d-flex justify-content-center"></section>
+        </section>
+        <section id="containerUsersReqBtn" class="mb-5">
+            <div class="mt-5 mb-5">
+                <h3 class="text-center">Peticiones a USERS</h3>
+                <h5 class="text-center">Peticiones realizadas a: 
+                    <a href="https://jsonplaceholder.typicode.com/users" class="fst-italic">https://jsonplaceholder.typicode.com/users</a>
+                </h5>
+            </div>
+            <article class="row w-100 d-flex justify-content-center">
+                <div class="col-2 d-flex flex-column align-items-center">
+                    <label for="inputTraerUserId">Obtener usuario por ID:</label>
+                    <input type="number" id="inputTraerUserId" class="form-control">
+                    <button type="button" id="btnTraerUserId" class="btn btn-primary mt-2">Solicitar</button>
+                </div>   
+                <div class="col-2 d-flex flex-column align-items-center gap-custom-1">
+                    <label for="intputTraerUserNames">Nombres de Usuarios:</label>
+                    <button type="button" id="btnTraerUserNames" class="btn btn-primary mt-2">Solicitar</button>
+                </div>
+                <div class="col-2 d-flex flex-column align-items-center gap-custom-1">
+                    <label for="intputTraerUserEmails">Emails de Usuarios:</label>
+                    <button type="button" id="btnTraerUserEmails" class="btn btn-primary mt-2">Solicitar</button>
+                </div>
+                <div class="col-2 d-flex flex-column align-items-center gap-custom-1">
+                    <label for="intputTraerUserAdress">Direcciones de Usuarios:</label>
+                    <button type="button" id="btnTraerUserAdress" class="btn btn-primary mt-2">Solicitar</button>
+                </div>
+                <div class="col-2 d-flex flex-column align-items-center gap-custom-1">
+                    <label for="intputTraerUserCompanies">Compañías de Usuarios:</label>
+                    <button type="button" id="btnTraerUserCompanies" class="btn btn-primary mt-2">Solicitar</button>
+                </div>
+            </article>
+            <section id="listaUsuarios" class="mt-3 mb-3 d-flex justify-content-center"></section>
+        </section>
+    </main>
+    <footer>
+        <nav class="navbar bg-dark pb-3 pt-3 navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+            <div class="container-fluid d-flex justify-content-between">
+                <div class="d-flex">
+                  <a class="navbar-brand text-white" href="/CaC-React/">Codo a Codo - React</a>
+                  <img src="../assets/img/react-logo.png" class="align-self-center" alt="logo_react">
+              </div>
+              <p class="text-white-50 mb-0">Díaz, Lautaro Nicolás &copy; 2023</p>
+            </div>
+          </nav>
+    </footer>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="./app.js" type="module"></script>
+</body>
+</html>

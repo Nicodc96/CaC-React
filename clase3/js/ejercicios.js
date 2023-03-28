@@ -343,3 +343,98 @@ document.querySelector("#btnReiniciarEj10").addEventListener("click", () => {
     document.querySelector("#inputRespEj10").value = "...";
     document.querySelector("#inputTextoEj10").value = "";
 });
+
+/*
+    11. Escribir un programa que determine si un año es bisiesto.
+    Un año es bisiesto si es múltiplo de 4. Los años múltiplos de 100 no son bisiestos, salvo si ellos también son múltiplos de 400. 
+    Por ejemplo: el año 2000 es bisiesto pero 1900 no.
+    Pedirle al usuario un año de inicio y otro de fin y mostrar todos los años bisiestos en ese rango.
+*/
+
+/* Lógica del ejercicio 11 */
+document.querySelector("#btnIngresarEj11").addEventListener("click", () => {
+    const anioInicio = Number(document.querySelector("#inputAnioInicio_ej11").value);
+    const anioFin = Number(document.querySelector("#inputAnioFin_ej11").value);
+    const txtRespuesta = document.querySelector("#pRespEj11");
+    const aniosBisiestos = [];
+    txtRespuesta.innerText = "";
+    if (isNaN(anioFin) || isNaN(anioInicio)){
+        alert("Error, datos inválidos. Se debe ingresar números!");
+    } else{
+        for (let i = anioInicio; i <= anioFin; i++){
+            if (i % 100 == 0){
+                if (i % 400 == 0 && i % 4 == 0){
+                    aniosBisiestos.push(i);
+                }
+            } else if (i % 4 == 0){
+                aniosBisiestos.push(i);
+            }
+        }
+    }
+    for (let i = 0; i < aniosBisiestos.length; i++){
+        if (i == aniosBisiestos.length - 1){
+            aniosBisiestos[i] < 0 ? txtRespuesta.innerText += `${aniosBisiestos[i]}a.C` : txtRespuesta.innerText += `${aniosBisiestos[i]}`;
+        } else{
+            aniosBisiestos[i] < 0 ? txtRespuesta.innerText += ` ${aniosBisiestos[i]} a.C | ` : txtRespuesta.innerText += ` ${aniosBisiestos[i]} | `;
+        }
+    }
+});
+document.querySelector("#btnReiniciarEj11").addEventListener("click", () => {
+    document.querySelector("#inputAnioInicio_ej11").value = "";
+    document.querySelector("#inputAnioFin_ej11").value = "";
+    document.querySelector("#pRespEj11").innerText = "...";
+});
+
+/*
+    12.Un centro numérico es un número que separa una lista de números enteros (comenzando en 1) en dos grupos de números, cuyas sumas son iguales.
+    El primer centro numérico es el 6, el cual separa la lista (1 a 8) en los grupos: (1; 2; 3; 4; 5) y (7; 8) cuyas sumas son ambas iguales a 15.
+    El segundo centro numérico es el 35, el cual separa la lista (1 a 49) en los grupos: (1 a 34) y (36 a 49) cuyas sumas son ambas iguales a 595.
+
+    Se pide elaborar una aplicación que calcule los centros numéricos entre 1 y el número que el usuario ingrese por consola.
+*/
+
+/*
+    13. Se debe pedir el ingreso por teclado del valor hora, el nombre, la antigüedad (en años) y 
+    la cantidad de horas trabajadas en el mes de N cantidad de empleados de una fábrica.
+    Se pide calcular el importe a cobrar teniendo en cuenta que el total (que resulta de multiplicar el valor hora por la cantidad de horas trabajadas),
+    hay que sumarle la cantidad de años trabajados multiplicados por $150, y al total de todas esas operaciones
+    restarle el 13% en concepto de descuentos.
+
+    Mostrar el recibo correspondiente con el nombre, la antigüedad, el valor hora, el total a cobrar en bruto 
+    y el total a cobrar neto de todos los empleados ingresados.
+*/
+
+/*
+    14. Generar una tabla en HTML (con CSS y Bootstrap) que muestre la tabla de multiplicar de un número que se ingresa por input o prompt.
+    Debe ser cualquier número natural sin límite.
+*/
+
+/*
+    15. Una empresa prestadora de servicios de internet necesita un algoritmo que permita realizar el
+    cálculo del monto a pagar de la factura de consumo de internet de 5 clientes de una empresa.
+    Para ellos, el programa debe solicitar por teclado dos datos: DNI cliente, y tipo de servicio.
+    Los tipos de servicio son 3:
+    a. Internet 30 megas (valor de $750 - 10% de descuento)
+    b. Internet 50 megas (valor $930 - 5% descuento)
+    c. Internet 100 megas (valor fijo de $1200)
+*/
+
+/*
+    16. 
+*/
+
+/*
+    17. 
+*/
+
+/*
+    18. 
+*/
+
+/*
+    19. 
+*/
+
+/*
+    20. 
+*/

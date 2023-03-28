@@ -418,6 +418,64 @@ const contenedorModales = [
     },
     function(){
         // 11
+        const divRow1 = createElementCustom("div", ["mb-3", "row"], "", {});
+        const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
+        const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Realiza un script que determine los años bisiestos a partir de 2 inputs. Los años negativos son considerados a.C.", {});
+        const divRow1_1 = createElementCustom("div", ["row"], "", {});
+        const label1_1 = createElementCustom("label", ["col-sm-3", "col-form-label"], "Año de inicio:", {"for":"inputAnioInicio_ej11"});
+        const divCol1_1 = createElementCustom("div", ["col-sm-9"], "", {});
+        const inputAnioInicio_ej11 = createElementCustom("input", ["form-control"], "", {
+            "type": "number",
+            "id": "inputAnioInicio_ej11",
+            "placeholder": "Año Inicio",
+            "max":"10000"
+        });
+        const divRow1_2 = createElementCustom("div", ["row", "mt-2"], "", {});
+        const label1_2 = createElementCustom("label", ["col-sm-3", "col-form-label"], "Año de fin:", {"for":"inputAnioFin_ej11"});
+        const divCol1_2 = createElementCustom("div", ["col-sm-9"], "", {});
+        const inputAnioFin_ej11 = createElementCustom("input", ["form-control"], "", {
+            "type": "number",
+            "id": "inputAnioFin_ej11",
+            "placeholder": "Año fin",
+            "max":"10000"
+        });
+        /* Uno los elementos según como corresponde */        
+
+        divRow1.appendChild(h3);
+        divRow1.appendChild(p1);
+        divRow1.appendChild(divRow1_1);
+        divRow1.appendChild(divRow1_2);
+        divRow1_1.appendChild(label1_1);
+        divRow1_1.appendChild(divCol1_1);
+        divCol1_1.appendChild(inputAnioInicio_ej11);
+        divRow1_2.appendChild(label1_2);
+        divRow1_2.appendChild(divCol1_2);
+        divCol1_2.appendChild(inputAnioFin_ej11);
+        
+        const divRow2 = createElementCustom("div", ["mb-3", "row"], "", {});
+        const divCol2 = createElementCustom("div", ["col", "d-flex", "flex-column", "align-items-center"], "", {});
+        const pResultTitle = createElementCustom("p", [], "Respuesta:", {});
+        const pResultBody = createElementCustom("p", [], "", { "id":"pRespEj11" });
+        const divRow3 = createElementCustom("div", ["row"], "", {});
+        const divCol3 = createElementCustom("div", ["col", "d-flex", "justify-content-center", "gap-2"], "", {});
+        const buttonSubmit = createElementCustom("button", ["btn", "btn-success", "mt-2"], "Ingresar", { 
+            "type":"button",
+            "id": "btnIngresarEj11"
+        });
+        const buttonReiniciar = createElementCustom("button", ["btn", "btn-secondary", "mt-2"], "Reiniciar", { 
+            "type":"button",
+            "id": "btnReiniciarEj11"
+        });
+        /* Uno los elementos según como corresponde */
+        divRow2.appendChild(divCol2);
+        divRow2.appendChild(divCol2);
+        divCol2.appendChild(pResultTitle);
+        divCol2.appendChild(pResultBody);
+        divRow3.appendChild(divCol3);
+        divCol3.appendChild(buttonSubmit);
+        divCol3.appendChild(buttonReiniciar);
+    
+        return [divRow1, divRow2, divRow3];
     },
     function(){
         // 12
