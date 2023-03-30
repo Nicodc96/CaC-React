@@ -1,5 +1,7 @@
 body{
-    background-color: rgb(240, 240, 240);
+    background-image: url("https://i.ibb.co/NWL0yDT/main-global.png");
+    background-size: 350px;
+    background-repeat: repeat;
 }
 
 #containerLogoText{
