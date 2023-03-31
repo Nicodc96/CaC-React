@@ -42,7 +42,10 @@ body{
     border-radius: 20px;
     transition: all 0.5s;
 }
+.hidden{
+    transform: translateX(calc(100% + 20px));
+}
 #containerBtnScrollTop:hover{
     background-color: rgb(255, 81, 81);
-    transform: scale(1.05);
+    transform: scale(1.1);
 }

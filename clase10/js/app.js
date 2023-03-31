@@ -10,6 +10,7 @@ const btnTercerNum = document.querySelector("#btnTercerNum");
 /* Contenedores y otros botones */
 const contenedorPeliculas = document.querySelector("#contenedorPeliculas");
 const btnScrollTop = document.querySelector("#btnScrollTop");
+const containerBtnScrollTop = document.querySelector("#containerBtnScrollTop");
 
 let paginaActual = 1;
 
@@ -18,6 +19,13 @@ window.addEventListener("load", async () => {
     await agregarPeliculas(paginaActual);
     actualizarPaginas(paginaActual);
     toggleActiveClass(1);
+    containerBtnScrollTop.classList.add("hidden");
+});
+
+window.addEventListener("scroll", (e) => {
+    let pageYOffset = parseInt(window.pageYOffset);
+    if (!containerBtnScrollTop.classList.contains("hidden") && pageYOffset < 800) containerBtnScrollTop.classList.add("hidden");
+    if (pageYOffset > 800) containerBtnScrollTop.classList.remove("hidden");
 });
 
 /* Manejo de eventos de los botones del Nav */
