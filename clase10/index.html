@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Práctica de Axios</title>
+</head>
+<body>
+    <header class="bg-dark text-white text-center pb-4">
+        <h1 class="pt-2">Práctica de consumo de API</h1>
+        <h2 class="fs-5 fst-italic mb-0">Method: Axios</h2>
+    </header>
+    <main>
+        <section class="container-fluid d-flex justify-content-center mt-4">
+            <img src="./assets/logo-axios.png" width="200px"/>
+        </section>
+        <section id="tituloPeliculas">
+            <h1 class="text-center fw-semibold">Películas populares</h1>
+        </section>
+        <section id="contenedorPeliculas" class="container-fluid mt-3">
+        </section>
+        <section class="d-flex justify-content-center gap-2 mb-5 mt-2">
+            <nav>
+                <ul class="pagination">
+                    <li class="page-item">
+                     <a class="page-link" id="btnAnterior">Anterior</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" id="btnPrimerNum"></a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" id="btnSegundoNum"></a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" id="btnTercerNum"></a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" id="btnSiguiente">Siguiente</a>
+                    </li>
+                </ul>
+              </nav>
+        </section>
+        <section id="containerBtnScrollTop">
+            <svg xmlns="http://www.w3.org/2000/svg" id="btnScrollTop" class="icon icon-tabler icon-tabler-arrow-up-circle" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <circle cx="12" cy="12" r="9" />
+                <line x1="12" y1="8" x2="8" y2="12" />
+                <line x1="12" y1="8" x2="12" y2="16" />
+                <line x1="16" y1="12" x2="12" y2="8" />
+            </svg>
+        </section>
+    </main>
+    <footer>
+        <nav class="navbar bg-dark pb-3 pt-3 navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+            <div class="container-fluid d-flex justify-content-between">
+                <div class="d-flex">
+                  <a class="navbar-brand text-white" href="/CaC-React/">Codo a Codo - React</a>
+                  <img src="../assets/img/react-logo.png" class="align-self-center" alt="logo_react">
+              </div>
+              <p class="text-white-50 mb-0">Díaz, Lautaro Nicolás &copy; 2023</p>
+            </div>
+          </nav>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="./js/app.js" type="module"></script>
+</body>
+</html>

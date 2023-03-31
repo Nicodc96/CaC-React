@@ -1,0 +1,48 @@
+body{
+    background-image: url("../assets/bg-mosaic.jpg");
+    background-size: 350px;
+    background-repeat: repeat;
+}
+.fs-custom-13{
+    font-size: 13px;
+}
+.fs-custom-11{
+    font-size: 11px;
+}
+.pb-6{
+    padding-bottom: 6vh !important;
+}
+.col-xxm{
+    width: 265px !important;
+}
+.card{
+    transition: all 0.5s;
+}
+.card:hover{
+    transform: scale(1.05);
+}
+.page-link{
+    cursor: pointer;
+}
+#btnAnterior:hover, #btnSiguiente:hover{
+    border-color: rgb(13, 110, 253);
+    background-color: rgb(13, 110, 253);
+    color: white;
+}
+#btnScrollTop{
+    cursor: pointer;
+}
+#containerBtnScrollTop{
+    background-color: rgb(255, 53, 53);
+    position: fixed;
+    width: max-content;
+    z-index: 99;
+    right: 1vw;
+    bottom: 8vh;
+    border-radius: 20px;
+    transition: all 0.5s;
+}
+#containerBtnScrollTop:hover{
+    background-color: rgb(255, 81, 81);
+    transform: scale(1.05);
+}
