@@ -1,6 +1,6 @@
 /* URL de la API */
 const URL = "https://api.themoviedb.org/3/movie/popular?api_key=9a854a8edeb1d719d0f00a9fc62fc00e&language=es-MX";
-const URL_IMAGES = "https://image.tmdb.org/t/p/original";
+const URL_IMAGES = "https://image.tmdb.org/t/p/w500";
 /* Referencia a botones del Nav */
 const btnAnterior = document.querySelector("#btnAnterior");
 const btnSiguiente = document.querySelector("#btnSiguiente");
