@@ -59,7 +59,7 @@ btnScrollTop.addEventListener("click", () => {
 
 const getMoviesByPage = async (pageNum) => {
     try{
-        const { data } = await axios(`${URL}/&page=${pageNum}`);
+        const { data } = await axios(`${URL}&page=${pageNum}`);
         const { results } = data;
         return results;
     }catch(error){
@@ -72,7 +72,7 @@ const agregarPeliculas = async (pagina) => {
     let peliculas = "";
     let cantCaracteres = 0;
     for (let i = 0; i < resultados.length; i++){
-        cantCaracteres = resultados[i].original_title.length;
+        cantCaracteres = resultados[i].title.length;
         if (i % 5 == 0 || i == 0){
             peliculas += i == 0 ? "<div class='row mx-5 pt-4 pb-4'>" : "</div><div class='row mx-5 pt-4 pb-4'>";
         }
@@ -81,7 +81,7 @@ const agregarPeliculas = async (pagina) => {
             <div class='card' style="width:16rem;">
                 <img src="${URL_IMAGES}${resultados[i].poster_path}" height="325px" class="card-img-top" alt="poster-pelicula">
                 <div class="card-body">
-                    <h5 class="card-title text-center" style="font-size:18px;">${resultados[i].original_title}</h5>
+                    <h5 class="card-title text-center" style="font-size:18px;">${resultados[i].title}</h5>
                     <div class="d-flex justify-content-center">
                     <button type="button" class='${cantCaracteres<=24?"btn btn-primary dropdown-toggle mb-3 mt-3":"btn btn-primary dropdown-toggle mb-3"}' data-bs-toggle="collapse" 
                     data-bs-target="#collapse-overview-${resultados[i].id}" aria-expanded="false" 
