@@ -15,6 +15,7 @@ const containerBtnScrollTop = document.querySelector("#containerBtnScrollTop");
 const inputBusqueda = document.querySelector("#inputBusquedaTitulo");
 const formBusqueda = document.querySelector("#formBusqueda");
 const btnVolverInicio = document.querySelector("#btnVolverInicio");
+const btnVolverInicio2 = document.querySelector("#btnVolverInicio2");
 const containerBtnVolverInicio = document.querySelector("#contenedorBtnVolverInicio");
 
 let paginaActual = 1;
@@ -85,6 +86,10 @@ btnScrollTop.addEventListener("click", () => {
 
 /* Botón volver al inicio */
 btnVolverInicio.addEventListener("click", async () => {
+    window.location.href = "./";
+});
+
+btnVolverInicio2.addEventListener("click", async () => {
     window.location.href = "./";
 });
 
