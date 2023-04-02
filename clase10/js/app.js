@@ -49,7 +49,7 @@ inputBusqueda.addEventListener("mouseover", () => {
 formBusqueda.addEventListener("submit", async (e) => {
     e.preventDefault();
     const resultados = await getMoviesByTitleSearch(1, inputBusqueda.value);
-    contenedorPeliculas.innerHTML = `<h3 class='text-center fst-italic mb-3 mt-3'>Resultados de la busqueda</h3>` + stringHTMLCardPelicula(resultados);
+    contenedorPeliculas.innerHTML = resultados.length != 0 ? `<h3 class='text-center fst-italic mb-3 mt-3'>Resultados de la busqueda</h3>` + stringHTMLCardPelicula(resultados) : stringHTMLCardPelicula(resultados);
     actualizarPaginas(paginaActual, paginasTotales);
     queryActual = inputBusqueda.value;
     busquedaActiva = true;
