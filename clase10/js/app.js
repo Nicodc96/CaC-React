@@ -171,11 +171,14 @@ const actualizarPaginas = (pagina, maxPaginas) => {
         btnPrimerNum.classList.remove("disabled");
         btnSegundoNum.classList.add("disabled");
         btnTercerNum.classList.add("disabled");
+        btnSiguiente.classList.add("disabled");
     } else if(pagina == maxPaginas-1){
         btnSegundoNum.classList.remove("disabled");
         btnTercerNum.classList.add("disabled");
+        btnSiguiente.classList.remove("disabled");
     } else if (pagina > maxPaginas){
         btnPrimerNum.classList.add("disabled");
+        btnSiguiente.classList.add("disabled");
     } else{
         btnPrimerNum.classList.remove("disabled");
         btnSegundoNum.classList.remove("disabled");
