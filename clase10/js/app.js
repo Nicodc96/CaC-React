@@ -15,7 +15,7 @@ const containerBtnScrollTop = document.querySelector("#containerBtnScrollTop");
 const inputBusqueda = document.querySelector("#inputBusquedaTitulo");
 const formBusqueda = document.querySelector("#formBusqueda");
 const btnVolverInicio = document.querySelector("#btnVolverInicio");
-const btnVolverInicio2 = document.querySelector("#btnVolverInicio2");
+const inputInicio = document.querySelector("#inputInicio");
 const containerBtnVolverInicio = document.querySelector("#contenedorBtnVolverInicio");
 
 let paginaActual = 1;
@@ -45,7 +45,7 @@ window.addEventListener("scroll", () => {
 /* Cuadro de búqueda por título */
 inputBusqueda.addEventListener("mouseover", () => {
     inputBusqueda.placeholder = "Búsqueda por título...";
-})
+});
 formBusqueda.addEventListener("submit", async (e) => {
     e.preventDefault();
     const resultados = await getMoviesByTitleSearch(1, inputBusqueda.value);
@@ -89,7 +89,11 @@ btnVolverInicio.addEventListener("click", async () => {
     window.location.href = "./";
 });
 
-btnVolverInicio2.addEventListener("click", async () => {
+inputInicio.addEventListener("mouseover", async () => {
+    inputInicio.placeholder = "   Inicio"; 
+});
+
+inputInicio.addEventListener("click", async () => {
     window.location.href = "./";
 });
 

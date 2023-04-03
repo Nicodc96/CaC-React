@@ -56,12 +56,15 @@ body{
     background-color: rgb(255, 81, 81);
     transform: scale(1.1);
 }
-#btnVolverInicio, #btnVolverInicio2{
+#btnVolverInicio{
     cursor: pointer;
     border-radius: 45px;
     padding: 5px;
     transition: 0.5s;
 }
-#btnVolverInicio:hover, #btnVolverInicio2:hover{
+#btnVolverInicio:hover{
     background-color: rgb(199, 199, 199);
+}
+#inputInicio:hover{
+    cursor: pointer;
 }

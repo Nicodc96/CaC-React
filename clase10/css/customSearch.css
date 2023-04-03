@@ -1,9 +1,8 @@
 .box{
     position: relative;
-    margin-right: 5vw;
+    margin-right: 4vw;
 }
-
-.input-search-custom {
+.input-search-custom, #inputInicio{
     padding: 10px;
     width: 65px;
     height: 65px;
@@ -32,4 +31,15 @@
 .box:hover svg{
     opacity: 0;
     z-index: -1;
+}
+/* Boton inicio */
+.box-inicio{
+    margin-right: 0px;
+    margin-left: 5vw;
+}
+.box-inicio:hover input{
+    width: 100px !important;
+}
+.box-inicio svg{
+    left: 9px;
 }

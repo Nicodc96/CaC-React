@@ -18,22 +18,29 @@
         <section class="container-fluid d-flex justify-content-center mt-4">
             <img src="./assets/logo-axios.png" width="200px"/>
         </section>
-        <section id="tituloPeliculas" class="row">
-            <div class="col-8 d-flex justify-content-between">
-                <svg xmlns="http://www.w3.org/2000/svg" class="mx-4" id="btnVolverInicio2" width="54" height="54" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <polyline points="5 12 3 12 12 3 21 12 19 12" />
-                    <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
-                    <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
-                </svg>
-                <h1 class="fw-semibold">Películas populares</h1>
+        <section id="tituloPeliculas" class="row d-flex justify-content-between px-2 pe-2">
+            <div class="col-4 d-flex">
+                <div class="box box-inicio">
+                    <form>
+                        <input type="text" id="inputInicio" onmouseout="this.value = ''; this.blur(); this.placeholder = ''">
+                    </form>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="mx-4" id="svgBtnInicio" width="54" height="54" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <polyline points="5 12 3 12 12 3 21 12 19 12" />
+                        <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                        <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                    </svg>  
+                </div>                              
+            </div>
+            <div class="col-4">
+                <h1 class="fw-semibold text-center">Películas populares</h1>
             </div>
             <div class="col-4 d-flex justify-content-end">
                 <div class="box">
                     <form id="formBusqueda">
                         <input type="text" class="input-search-custom" name="search" id="inputBusquedaTitulo" onmouseout="this.value = ''; this.blur(); this.placeholder = ''">
                     </form>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#212529e6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#212529e6" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <circle cx="10" cy="10" r="7" />
                         <line x1="21" y1="21" x2="15" y2="15" />
