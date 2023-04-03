@@ -69,14 +69,17 @@ btnSiguiente.addEventListener("click", async () => {
 btnPrimerNum.addEventListener("click", async () => {
     checkActive() == 2 ? paginaActual-- : checkActive() == 3 ? paginaActual -= 2 : paginaActual;
     await checkAndUpdateMovies(btnPrimerNum, 1);
+    actualizarPaginas(paginaActual, paginasTotales);
 });
 btnSegundoNum.addEventListener("click", async () => {
     checkActive() == 3 ? paginaActual-- : paginaActual++;
     await checkAndUpdateMovies(btnSegundoNum, 2);
+    actualizarPaginas(paginaActual, paginasTotales);
 });
 btnTercerNum.addEventListener("click", async () => {
     checkActive() == 1 ? paginaActual+=2 : paginaActual++;
     await checkAndUpdateMovies(btnTercerNum, 3);
+    actualizarPaginas(paginaActual, paginasTotales);
 });
 
 /* Función del botón que lleva la página arriba del todo */
