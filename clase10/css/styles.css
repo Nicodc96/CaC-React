@@ -1,4 +1,5 @@
 @import url(./customSearch.css);
+@import url(./mediaQuery.css);
 body{
     background-image: url("../assets/bg-mosaic.jpg");
     background-size: 350px;
