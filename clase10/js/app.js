@@ -69,17 +69,19 @@ btnSiguiente.addEventListener("click", async () => {
 btnPrimerNum.addEventListener("click", async () => {
     checkActive() == 2 ? paginaActual-- : checkActive() == 3 ? paginaActual -= 2 : paginaActual;
     await checkAndUpdateMovies(btnPrimerNum, 1);
-    actualizarPaginas(paginaActual, paginasTotales);
+    if (busquedaActiva) actualizarPaginas(paginaActual, paginasTotales);
 });
 btnSegundoNum.addEventListener("click", async () => {
     checkActive() == 3 ? paginaActual-- : paginaActual++;
     await checkAndUpdateMovies(btnSegundoNum, 2);
-    actualizarPaginas(paginaActual, paginasTotales);
+    if (busquedaActiva) actualizarPaginas(paginaActual, paginasTotales);
+    if (paginaActual == paginasTotales) toggleActiveClass(1);
 });
 btnTercerNum.addEventListener("click", async () => {
     checkActive() == 1 ? paginaActual+=2 : paginaActual++;
     await checkAndUpdateMovies(btnTercerNum, 3);
-    actualizarPaginas(paginaActual, paginasTotales);
+    if (busquedaActiva) actualizarPaginas(paginaActual, paginasTotales);
+    if (paginaActual == paginasTotales) toggleActiveClass(1);
 });
 
 /* Función del botón que lleva la página arriba del todo */
@@ -89,16 +91,22 @@ btnScrollTop.addEventListener("click", () => {
 
 /* Botón volver al inicio */
 btnVolverInicio.addEventListener("click", async () => {
-    window.location.href = "./";
+    volverAlInicio();
+    busquedaActiva = false;
 });
 
 inputInicio.addEventListener("mouseover", async () => {
-    inputInicio.placeholder = "   Inicio"; 
+    inputInicio.placeholder = "   Inicio";
 });
 
 inputInicio.addEventListener("click", async () => {
-    window.location.href = "./";
+    volverAlInicio();
+    busquedaActiva = false;
 });
+
+const volverAlInicio = () => {
+    window.location.href = "./";
+}
 
 const getMoviesByPage = async (pageNum) => {
     try{
