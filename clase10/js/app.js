@@ -150,7 +150,7 @@ const stringHTMLCardPelicula = (resultados) => {
         for (let i = 0; i < resultados.length; i++){
             cantCaracteres = resultados[i].title.length;
             if (i % 5 == 0 || i == 0){
-                peliculas += i == 0 ? "<div class='row mx-5 pt-4 pb-4'>" : "</div><div class='row mx-5 pt-4 pb-4'>";
+                peliculas += i == 0 ? "<div class='row mx-5 pt-4 pb-4 row-cards'>" : "</div><div class='row mx-5 pt-4 pb-4 row-cards    '>";
             }
             peliculas += `
             <div class='col d-flex justify-content-center col-xxm pb-4'>
