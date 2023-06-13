@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import './Boton.css';
 import Boton from './Boton';
+import Card from './Card';
 
 function App() {
   return (
@@ -20,10 +21,19 @@ function App() {
         >
           Learn about React
         </a>
-        <div className='Container-Buttons'>
+        <div className='container-buttons'>
           {Boton(1)}
           {Boton(2)}
           {Boton(3)}
+        </div>
+        <div className='container-cards'>
+          <Card 
+            apellido = "Messi" 
+            descripcion = "El mejor jugador del mundo actualmente." 
+            mundial = {true} 
+            fechaNacimiento = {1987}
+            clubes = {["Newell's Old Boys", "FC Barcelona", "PSG"]}
+            />
         </div>
       </header>
     </div>

@@ -1,0 +1,12 @@
+.btn-Custom{
+    padding: 5px;
+    border-color: rgb(85, 85, 219);
+    border-radius: 8px;
+    background-color: rgb(65, 65, 190);
+    color: white;
+    font-family: sans-serif;
+}
+.btn-Custom:hover{
+    border-color: rgb(65, 65, 190);
+    background-color: rgb(85, 85, 219);
+}
