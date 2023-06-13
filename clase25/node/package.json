@@ -1,0 +1,15 @@
+{
+  "name": "clase25",
+  "version": "0.0.1",
+  "description": "first node server",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nicolas Diaz",
+  "license": "ISC",
+  "dependencies": {
+    }
+}
