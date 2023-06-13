@@ -1,0 +1,10 @@
+#contenedorTabla{
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    width: 60vw;
+}
+#tablaJugadores th{
+    text-align: center;
+    background-color: rgb(65, 156, 65);
+    color: white;
+}

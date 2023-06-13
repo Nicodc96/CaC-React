@@ -1,0 +1,31 @@
+header{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../public/bg-react.jpg');
+    height: 35vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.header-text{
+    text-align: center;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+.txtFooterCaC{
+    transition: all 0.5s;
+}
+.txtFooterCaC:hover{
+    color: white !important;
+}
+footer{
+    position: fixed;
+    width: 100%;
+    height: 3.3vw;
+    top: 94%;
+    justify-content: space-between;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
