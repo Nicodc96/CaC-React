@@ -373,7 +373,7 @@ document.querySelector("#btnIngresarEj11").addEventListener("click", () => {
     }
     for (let i = 0; i < aniosBisiestos.length; i++){
         if (i == aniosBisiestos.length - 1){
-            aniosBisiestos[i] < 0 ? txtRespuesta.innerText += `${aniosBisiestos[i]}a.C` : txtRespuesta.innerText += `${aniosBisiestos[i]}`;
+            aniosBisiestos[i] < 0 ? txtRespuesta.innerText += `${aniosBisiestos[i]} a.C` : txtRespuesta.innerText += `${aniosBisiestos[i]}`;
         } else{
             aniosBisiestos[i] < 0 ? txtRespuesta.innerText += ` ${aniosBisiestos[i]} a.C | ` : txtRespuesta.innerText += ` ${aniosBisiestos[i]} | `;
         }
@@ -386,28 +386,34 @@ document.querySelector("#btnReiniciarEj11").addEventListener("click", () => {
 });
 
 /*
-    12.Un centro numérico es un número que separa una lista de números enteros (comenzando en 1) en dos grupos de números, cuyas sumas son iguales.
-    El primer centro numérico es el 6, el cual separa la lista (1 a 8) en los grupos: (1; 2; 3; 4; 5) y (7; 8) cuyas sumas son ambas iguales a 15.
-    El segundo centro numérico es el 35, el cual separa la lista (1 a 49) en los grupos: (1 a 34) y (36 a 49) cuyas sumas son ambas iguales a 595.
+    12. Un centro numérico es un número que separa una lista de números enteros (comenzando en 1) en dos grupos de números,
+    cuyas sumas son iguales. El primer centro numérico es el 6, el cual separa la lista (1 a 8) en los grupos: 
+    (1; 2; 3; 4; 5) y (7; 8) cuyas sumas son ambas iguales a 15.El segundo centro numérico es el 35, el cual separa 
+    la lista (1 a 49) en los grupos: (1 a 34) y (36 a 49) cuyas sumas son ambas iguales a 595.
 
-    Se pide elaborar una aplicación que calcule los centros numéricos entre 1 y el número que el usuario ingrese por consola.
+    Se pide elaborar una aplicación que calcule los centros numéricos entre 1 y el número que el usuario ingrese.
 */
+/* Lógica del ejercicio 12 */
+
 
 /*
     13. Se debe pedir el ingreso por teclado del valor hora, el nombre, la antigüedad (en años) y 
     la cantidad de horas trabajadas en el mes de N cantidad de empleados de una fábrica.
-    Se pide calcular el importe a cobrar teniendo en cuenta que el total (que resulta de multiplicar el valor hora por la cantidad de horas trabajadas),
-    hay que sumarle la cantidad de años trabajados multiplicados por $150, y al total de todas esas operaciones
-    restarle el 13% en concepto de descuentos.
+    Se pide calcular el importe a cobrar teniendo en cuenta que el total (que resulta de multiplicar el valor hora 
+    por la cantidad de horas trabajadas), hay que sumarle la cantidad de años trabajados multiplicados por $150, 
+    y al total de todas esas operaciones restarle el 13% en concepto de descuentos.
 
     Mostrar el recibo correspondiente con el nombre, la antigüedad, el valor hora, el total a cobrar en bruto 
     y el total a cobrar neto de todos los empleados ingresados.
 */
+/* Lógica del ejercicio 13 */
 
 /*
-    14. Generar una tabla en HTML (con CSS y Bootstrap) que muestre la tabla de multiplicar de un número que se ingresa por input o prompt.
+    14. Generar una tabla en HTML (con CSS y Bootstrap) que muestre la tabla de multiplicar de un número que 
+    se ingresa por input o prompt.
     Debe ser cualquier número natural sin límite.
 */
+/* Lógica del ejercicio 14 */
 
 /*
     15. Una empresa prestadora de servicios de internet necesita un algoritmo que permita realizar el
@@ -418,6 +424,7 @@ document.querySelector("#btnReiniciarEj11").addEventListener("click", () => {
     b. Internet 50 megas (valor $930 - 5% descuento)
     c. Internet 100 megas (valor fijo de $1200)
 */
+/* Lógica del ejercicio 15 */
 
 /*
     16. 
@@ -438,3 +445,7 @@ document.querySelector("#btnReiniciarEj11").addEventListener("click", () => {
 /*
     20. 
 */
+
+/* Activación de tooltips de Bootstrap */
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));

@@ -479,6 +479,61 @@ const contenedorModales = [
     },
     function(){
         // 12
+        const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
+        const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
+        const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Elaborar una aplicación que calcule los centros numéricos entre 1 HASTA el número que el usuario ingrese.", {});
+        const label = createElementCustom("label", ["col-sm-3", "col-form-label"], "Ingrese el número:", {"for":"inputNumeroEj12"});
+        const divCol1 = createElementCustom("div", ["col-sm-9"], "", {});
+        const divRow1Plus = createElementCustom("div", ["row"], "", {});
+        const divCol1Plus = createElementCustom("div", ["col", "d-flex", "gap-3", "flex-row", "mt-2"], "", {});
+        const inputPalabra = createElementCustom("input", ["form-control"], "", {
+            "type": "number",
+            "id": "inputNumeroEj12",
+            "placeholder": "Aquí escribir el número hasta donde calcular..."
+        });
+        const buttonContar = createElementCustom("button", ["btn", "btn-primary", "mt-1"], "Calcular", { 
+            "type": "button",
+            "id": "btnCalcularEj12"
+        });
+        const buttonReiniciar = createElementCustom("button", ["btn", "btn-secondary", "mt-1"], "Reiniciar", {
+            "type": "button",
+            "id": "btnReiniciarEj12"
+        })
+        /* Uno los elementos según como corresponde */
+        divCol1.appendChild(inputPalabra);
+        divCol1.appendChild(divRow1Plus);
+        divRow1Plus.appendChild(divCol1Plus);
+        divCol1Plus.appendChild(buttonContar);
+        divCol1Plus.appendChild(buttonReiniciar);
+        divRow.appendChild(h3);
+        divRow.appendChild(p1);
+        divRow.appendChild(label);
+        divRow.appendChild(divCol1);
+        
+        const divRow2 = createElementCustom("div", ["mb-3", "row"], "", {});
+        const labelResult = createElementCustom("label", ["col-sm-3", "col-form-label"], "Respuesta:", { "for":"inputRespEj12" });
+        const divCol2 = createElementCustom("div", ["col-sm-9"], "", {});
+        const inputResult = createElementCustom("input", ["form-control-plaintext"], "", {
+            "type":"text",
+            "readonly":"",
+            "id":"inputRespEj12",
+            "value": "..."
+        });
+        const divRow3 = createElementCustom("div", ["mb-3", "row"], "", {});
+        const divCol1Row3 = createElementCustom("div", ["col", "d-flex"], "", {});
+        const svgInfo = `<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round"
+        data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Más info del ejercicio">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M12 2c5.523 0 10 4.477 10 10a10 10 0 0 1 -19.995 .324l-.005 -.324l.004 -.28c.148 -5.393 4.566 -9.72 9.996 -9.72zm0 9h-1l-.117 .007a1 1 0 0 0 0 1.986l.117 .007v3l.007 .117a1 1 0 0 0 .876 .876l.117 .007h1l.117 -.007a1 1 0 0 0 .876 -.876l.007 -.117l-.007 -.117a1 1 0 0 0 -.764 -.857l-.112 -.02l-.117 -.006v-3l-.007 -.117a1 1 0 0 0 -.876 -.876l-.117 -.007zm.01 -3l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z" stroke-width="0" fill="currentColor" />
+        </svg>`;
+        divRow3.appendChild(divCol1Row3);
+        divCol1Row3.innerHTML += svgInfo;
+        /* Uno los elementos según como corresponde */
+        divCol2.appendChild(inputResult);
+        divRow2.appendChild(labelResult);
+        divRow2.appendChild(divCol2);
+    
+        return [divRow, divRow2, divRow3];
     },
     function(){
         // 13
