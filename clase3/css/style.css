@@ -12,3 +12,7 @@ footer{
     padding-bottom: 1vh;
     background-color: rgba(0, 52, 100, 0.226);
 }
+
+#svgInfoEj12:hover{
+    cursor: pointer;
+}
