@@ -19,9 +19,8 @@ document.querySelector("#btnIngresarEdad").addEventListener("click", (e) => {
     e.preventDefault();
     const inputEdad = document.querySelector("#inputEdad");
     const inputResultado = document.querySelector("#inputRespuestaEdad");
-    if (inputEdad.value == null || inputEdad.value == ""){
-        inputResultado.value = "¡Debe ingresar una edad!"
-    } else inputResultado.value = inputEdad.value >= 18 ? "Ya puede conducir, ¡felicidades!" : "No puede conducir, ¡aún es menor!";
+    (inputEdad.value == null || inputEdad.value == "") ? inputResultado.value = "¡Debe ingresar una edad!" :
+    (inputResultado.value = inputEdad.value >= 18 ? "Ya puede conducir, ¡felicidades!" : "No puede conducir, ¡aún es menor!");
 });
 
 /*
@@ -94,15 +93,12 @@ document.querySelector("#btnMostrarPalabras").addEventListener("click", (e) => {
     } else{
         inputRespuestaPalabras.value = "";
         for (let i = 0; i < palabras_ej3.length; i++){
-            if (i == palabras_ej3.length-1){
-                inputRespuestaPalabras.value += `${palabras_ej3[i]}`;
-            } else{
-                inputRespuestaPalabras.value += `${palabras_ej3[i]}-`;
-            }
+            i == palabras_ej3.length-1 ?
+            inputRespuestaPalabras.value += `${palabras_ej3[i]}` :
+            inputRespuestaPalabras.value += `${palabras_ej3[i]}-`;
         }
     }
 });
-
 document.querySelector("#btnLimpiarPalabras").addEventListener("click", () => {
     limpiar_ej3();
 });
@@ -161,12 +157,10 @@ document.querySelector("#btnEjecutarEj5").addEventListener("click", (e) => {
             break;
         }
         numDNI = Number(numDNI);
-        if (!isNaN(numDNI) && numDNI >= 0 && numDNI <= 99999999){
-            letras_ej5.push(valoresLetras[numDNI % 23]);
-        } else{
-            alert("¡Error! El valor ingresado no es un número o está fuera de los valores.");
-        }
-    }while(true);
+        (!isNaN(numDNI) && numDNI >= 0 && numDNI <= 99999999) ?
+        letras_ej5.push(valoresLetras[numDNI % 23]) :
+        alert("¡Error! El valor ingresado no es un número o está fuera de los valores.");
+    } while(true);
 });
 document.querySelector("#btnReiniciarEj5").addEventListener("click", () => {
     letras_ej5.length = 0;
@@ -199,11 +193,7 @@ document.querySelector("#btnEjecutarEj6").addEventListener("click", (e) => {
                 for (let j = 1; j <= i; j++){
                     numRepetido += i;
                 }
-                if (i === numeroIngresado){
-                    stringRespuesta += numRepetido;
-                } else{
-                    stringRespuesta += `${numRepetido}\n`;
-                }
+                i === numeroIngresado ? stringRespuesta += numRepetido : stringRespuesta += `${numRepetido}\n`;
                 numRepetido = "";
             }
             document.querySelector("#textRespEj6").innerText = stringRespuesta;
@@ -337,7 +327,9 @@ document.querySelector("#btnContarVocalesEj10").addEventListener("click", () => 
     for (let i = 0; i < textoInput.length; i++){
         if (esVocal(textoInput[i])) contador++;
     }
-    inputRespuesta.value = contador == 0 ? `No hay vocales en el texto ingresado.`: `Hay un total de ${contador} vocales en el texto ingresado.`;
+    inputRespuesta.value = contador == 0 ?
+    `No hay vocales en el texto ingresado.` : 
+    `Hay un total de ${contador} vocales en el texto ingresado.`;
 });
 document.querySelector("#btnReiniciarEj10").addEventListener("click", () => {
     document.querySelector("#inputRespEj10").value = "...";
@@ -373,7 +365,7 @@ document.querySelector("#btnIngresarEj11").addEventListener("click", () => {
     }
     for (let i = 0; i < aniosBisiestos.length; i++){
         if (i == aniosBisiestos.length - 1){
-            aniosBisiestos[i] < 0 ? txtRespuesta.innerText += `${aniosBisiestos[i]} a.C` : txtRespuesta.innerText += `${aniosBisiestos[i]}`;
+            aniosBisiestos[i] < 0 ? txtRespuesta.innerText += ` ${aniosBisiestos[i]} a.C` : txtRespuesta.innerText += ` ${aniosBisiestos[i]}`;
         } else{
             aniosBisiestos[i] < 0 ? txtRespuesta.innerText += ` ${aniosBisiestos[i]} a.C | ` : txtRespuesta.innerText += ` ${aniosBisiestos[i]} | `;
         }
