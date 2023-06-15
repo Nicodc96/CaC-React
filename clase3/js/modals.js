@@ -477,8 +477,7 @@ const contenedorModales = [
     
         return [divRow1, divRow2, divRow3];
     },
-    function(){
-        // 12
+    function(){ // 12
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
         const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Elaborar una aplicación que calcule los centros numéricos entre 1 HASTA el número que el usuario ingrese.", {});
@@ -488,6 +487,7 @@ const contenedorModales = [
         const divCol1Plus = createElementCustom("div", ["col", "d-flex", "gap-3", "flex-row", "mt-2"], "", {});
         const inputPalabra = createElementCustom("input", ["form-control"], "", {
             "type": "number",
+            "min": "1",
             "id": "inputNumeroEj12",
             "placeholder": "Aquí escribir el número hasta donde calcular..."
         });
@@ -521,11 +521,13 @@ const contenedorModales = [
         });
         const divRow3 = createElementCustom("div", ["mb-3", "row"], "", {});
         const divCol1Row3 = createElementCustom("div", ["col", "d-flex", "flex-column", "align-items-end"], "", {});
-        const svgInfo = `<div data-bs-toggle="collapse" data-bs-target="#collapseTextSvgInfo"><svg xmlns="http://www.w3.org/2000/svg" width="36px" height="36px" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round"
-        data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Más info del ejercicio" id="svgInfoEj12">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <path d="M12 2c5.523 0 10 4.477 10 10a10 10 0 0 1 -19.995 .324l-.005 -.324l.004 -.28c.148 -5.393 4.566 -9.72 9.996 -9.72zm0 9h-1l-.117 .007a1 1 0 0 0 0 1.986l.117 .007v3l.007 .117a1 1 0 0 0 .876 .876l.117 .007h1l.117 -.007a1 1 0 0 0 .876 -.876l.007 -.117l-.007 -.117a1 1 0 0 0 -.764 -.857l-.112 -.02l-.117 -.006v-3l-.007 -.117a1 1 0 0 0 -.876 -.876l-.117 -.007zm.01 -3l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z" stroke-width="0" fill="currentColor" />
-        </svg></div>`;
+        const svgInfo = `<div data-bs-toggle="collapse" data-bs-target="#collapseTextSvgInfo" id="contenedorSvgInfo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36px" height="36px" viewBox="0 0 24 24" 
+            fill="none" id="svgInfoEj12">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 2c5.523 0 10 4.477 10 10a10 10 0 0 1 -19.995 .324l-.005 -.324l.004 -.28c.148 -5.393 4.566 -9.72 9.996 -9.72zm0 9h-1l-.117 .007a1 1 0 0 0 0 1.986l.117 .007v3l.007 .117a1 1 0 0 0 .876 .876l.117 .007h1l.117 -.007a1 1 0 0 0 .876 -.876l.007 -.117l-.007 -.117a1 1 0 0 0 -.764 -.857l-.112 -.02l-.117 -.006v-3l-.007 -.117a1 1 0 0 0 -.876 -.876l-.117 -.007zm.01 -3l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z" stroke-width="0" fill="currentColor" />
+            </svg>
+        </div>`;
         const divTextSvgInfo = createElementCustom("div", ["collapse"], "", {"id":"collapseTextSvgInfo"});
         const textSvgInfo = createElementCustom("p", ["mb-0", "text-center", "fst-italic"], "Un centro numérico es un número que separa una lista de números enteros (comenzando en 1) en dos grupos de números, cuyas sumas son iguales. El primer centro numérico es el 6, el cual separa la lista (1 a 8) en los grupos: (1; 2; 3; 4; 5) y (7; 8) cuyas sumas son ambas iguales a 15. El segundo centro numérico es el 35, el cual separa la lista (1 a 49) en los grupos: (1 a 34) y (36 a 49) cuyas sumas son ambas iguales a 595.", {});
 

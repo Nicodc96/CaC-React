@@ -386,7 +386,49 @@ document.querySelector("#btnReiniciarEj11").addEventListener("click", () => {
     Se pide elaborar una aplicación que calcule los centros numéricos entre 1 y el número que el usuario ingrese.
 */
 /* Lógica del ejercicio 12 */
-
+const svgEj12 = document.querySelector("#svgInfoEj12");
+const tooltip = new bootstrap.Tooltip(svgEj12, {
+    boundary: document.querySelector("#modalEjercicio12"),
+    animation: true,
+    title: 'Más info del ejercicio',
+    placement: 'top',
+    trigger: 'manual'
+});
+document.querySelector("#contenedorSvgInfo").addEventListener("click", () => {
+    setTimeout(() => {
+        tooltip.toggle()
+    }, 235);
+});
+document.querySelector("#btnCalcularEj12").addEventListener("click", () => {
+    const inputNumero = document.querySelector("#inputNumeroEj12");
+    const numMaximoACalcular = Number(inputNumero.value);
+    const inputResultado = document.querySelector("#inputRespEj12");
+    inputResultado.value = "";
+    const centrosNumericos = [];
+    let acumuladorPrev = 0;
+    let acumuladorPost = 0;
+    for (let i = 1; i <= numMaximoACalcular; i++){
+        for (let j = 1; j < i; j++){
+            acumuladorPrev += j;
+        }
+        for (let k = i+1; k <= acumuladorPrev; k++){
+            acumuladorPost += k;
+            if (acumuladorPost == acumuladorPrev) centrosNumericos.push(i);
+            else if(acumuladorPost > acumuladorPrev) break;
+        }
+        acumuladorPost = 0;
+        acumuladorPrev = 0;
+    }
+    for (let i = 0; i < centrosNumericos.length; i++){
+        i == centrosNumericos.length - 1 ?
+        inputResultado.value += ` ${centrosNumericos[i]}` :
+        inputResultado.value += ` ${centrosNumericos[i]},`;
+    }
+});
+document.querySelector("#btnReiniciarEj12").addEventListener("click", () => {
+    document.querySelector("#inputNumeroEj12").value = "";
+    document.querySelector("#inputRespEj12").value = "...";
+});
 
 /*
     13. Se debe pedir el ingreso por teclado del valor hora, el nombre, la antigüedad (en años) y 
