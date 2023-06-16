@@ -4,8 +4,7 @@ import { createElementCustom } from "./elementos.js"
  * *(siendo N un número natural indeterminado)*
  */
 const contenedorModales = [
-    function(){
-        // 1
+    function(){ // 1
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
         const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "1. Pedir la edad y si es mayor de 18 años indica que ya puede conducir.", {});
@@ -46,8 +45,7 @@ const contenedorModales = [
     
         return [divRow, divRow2];
     },
-    function(){
-        // 2
+    function(){ // 2
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
         const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "2. Pide una nota (número). Muestra la calificación según la nota:\n0-3: Muy deficiente\n3-5: Insuficiente\n5-6: Suficiente\n6-7: Bien\n7-9: Notable\n9-10: Sobresaliente", {});
@@ -86,8 +84,7 @@ const contenedorModales = [
     
         return [divRow, divRow2];
     },
-    function(){
-        // 3
+    function(){ // 3
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
         const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Realiza un script que pida cadenas de texto hasta que se pulse “Mostrar”. Al salir con “Mostrar” deben mostrarse todas las cadenas concatenadas con un guión '-'", {});
@@ -140,8 +137,7 @@ const contenedorModales = [
     
         return [divRow, divRow2];
     },
-    function(){
-        // 4
+    function(){ // 4
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
         const p1 = createElementCustom("p", ["text-center", "fst-italic" , "mt-3"], "Realiza un script que pida números hasta que se pulse “cancelar”. Si no es un número deberá indicarse con un «alert» y seguir pidiendo. Al salir con “cancelar” deberá indicarse la suma total de los números introducidos.", {});
@@ -177,8 +173,7 @@ const contenedorModales = [
     
         return [divRow, divRow2];
     },
-    function(){
-        // 5
+    function(){ // 5
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
         const p1 = createElementCustom("p", ["text-center", "fst-italic" , "mt-3"], "Realizar una página con un script que calcule el valor de la letra de un número de DNI (Documento nacional de indentidad). Según el resultado, de 0 a 22, le corresponderá una letra de las siguientes: (T, R, W, A, G, M, Y, F, P, D, X, B, N, J, Z, S, Q, V, H, L, C, K, E) en ese órden. Si lo introducido no es un número deberá indicarse con un alert y volver a preguntar.", {});
@@ -214,8 +209,7 @@ const contenedorModales = [
     
         return [divRow, divRow2];
     },
-    function(){
-        // 6
+    function(){ // 6
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
         const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Realiza un script que escriba una pirámide del 1 hasta el número que se indique.", {});
@@ -244,8 +238,7 @@ const contenedorModales = [
     
         return [divRow, div2];
     },
-    function(){
-        // 7
+    function(){ // 7
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
         const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Realizar un script que escriba los números del 1 hasta el número que se indique (máximo 100), que indique cuales son múltiplos de 4 y de 9 y que cada 5 líneas muestre una línea horizontal.", {});
@@ -274,8 +267,7 @@ const contenedorModales = [
     
         return [divRow, div2];
     },
-    function(){
-        // 8
+    function(){ // 8
         const divRow1 = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
         const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Realiza un script que pida número de filas y columnas y escriba una tabla. Dentro cada una de las celdas deberá escribirse un número consecutivo en orden descendente. Si, por ejemplo, la tabla es de 7×5 los números irán del 1 al 35.", {});
@@ -337,8 +329,7 @@ const contenedorModales = [
     
         return [divRow1, divRow2, divRow3];
     },
-    function(){
-        // 9
+    function(){ // 9
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
         const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Realizar un script que imprima 14 resultados aleatorios de una quiniela 1 X 2. Ejemplo de resultado: Resultado 1: 1, Resultado 2: X, Resultado 3: 2, ..., Resultado 14: 2. Además agregar la probabilidad de que salga el 1 sea del 60%, la de la X del 30% y la del 2 del 10%.", {});
@@ -367,8 +358,7 @@ const contenedorModales = [
     
         return [divRow, div2];
     },
-    function(){
-        // 10
+    function(){ // 10
         const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
         const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Realiza un script que cuente el número de vocales que tiene un texto utilizando expresiones regulares (incluir mayúsculas acentos y ü).", {});
@@ -416,8 +406,7 @@ const contenedorModales = [
     
         return [divRow, divRow2];
     },
-    function(){
-        // 11
+    function(){ // 11
         const divRow1 = createElementCustom("div", ["mb-3", "row"], "", {});
         const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
         const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Realiza un script que determine los años bisiestos a partir de 2 inputs. Los años negativos son considerados a.C.", {});
@@ -521,14 +510,14 @@ const contenedorModales = [
         });
         const divRow3 = createElementCustom("div", ["mb-3", "row"], "", {});
         const divCol1Row3 = createElementCustom("div", ["col", "d-flex", "flex-column", "align-items-end"], "", {});
-        const svgInfo = `<div data-bs-toggle="collapse" data-bs-target="#collapseTextSvgInfo" id="contenedorSvgInfo">
+        const svgInfo = `<div data-bs-toggle="collapse" data-bs-target="#collapseTextSvgInfoEj12" id="contenedorSvgInfoEj12">
             <svg xmlns="http://www.w3.org/2000/svg" width="36px" height="36px" viewBox="0 0 24 24" 
-            fill="none" id="svgInfoEj12">
+            fill="none" id="svgInfoEj12" class="svgInfo">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                 <path d="M12 2c5.523 0 10 4.477 10 10a10 10 0 0 1 -19.995 .324l-.005 -.324l.004 -.28c.148 -5.393 4.566 -9.72 9.996 -9.72zm0 9h-1l-.117 .007a1 1 0 0 0 0 1.986l.117 .007v3l.007 .117a1 1 0 0 0 .876 .876l.117 .007h1l.117 -.007a1 1 0 0 0 .876 -.876l.007 -.117l-.007 -.117a1 1 0 0 0 -.764 -.857l-.112 -.02l-.117 -.006v-3l-.007 -.117a1 1 0 0 0 -.876 -.876l-.117 -.007zm.01 -3l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z" stroke-width="0" fill="currentColor" />
             </svg>
         </div>`;
-        const divTextSvgInfo = createElementCustom("div", ["collapse"], "", {"id":"collapseTextSvgInfo"});
+        const divTextSvgInfo = createElementCustom("div", ["collapse"], "", {"id":"collapseTextSvgInfoEj12"});
         const textSvgInfo = createElementCustom("p", ["mb-0", "text-center", "fst-italic"], "Un centro numérico es un número que separa una lista de números enteros (comenzando en 1) en dos grupos de números, cuyas sumas son iguales. El primer centro numérico es el 6, el cual separa la lista (1 a 8) en los grupos: (1; 2; 3; 4; 5) y (7; 8) cuyas sumas son ambas iguales a 15. El segundo centro numérico es el 35, el cual separa la lista (1 a 49) en los grupos: (1 a 34) y (36 a 49) cuyas sumas son ambas iguales a 595.", {});
 
         /* Uno los elementos según como corresponde */
@@ -543,30 +532,164 @@ const contenedorModales = [
     
         return [divRow, divRow2, divRow3];
     },
-    function(){
-        // 13
+    function(){ // 13
+        /* Row 1 y sus sub elementos */
+        const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
+        const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
+        const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-2"], "Realiza un programa que calcule salarios de empleados individualmente según antigüedad, horas y valor de c/hora. Se debe aplicar finalmente un 13% en conceptos de descuento.", {});
+        const divContenedorDeInputs = createElementCustom("div", ["row"], "", {});
+        const divColContenedor = createElementCustom("div", ["col", "d-flex", "flex-column", "gap-1"], "", {});
+        const divSubRow1 = createElementCustom("div", ["row"], "", {});
+        const inputlabel1 = createElementCustom("label", ["col-sm-3", "col-form-label"], "Nombre empleado:", {"for":"inputNombreEmpEj13"});
+        const inputCol1 = createElementCustom("div", ["col-sm-9"], "", {});
+        const divSubRow2 = createElementCustom("div", ["row"], "", {});
+        const inputlabel2 = createElementCustom("label", ["col-sm-3", "col-form-label"], "Antigüedad:", {"for":"inputAntigEmpEj13"});
+        const inputCol2 = createElementCustom("div", ["col-sm-9"], "", {});
+        const divSubRow3 = createElementCustom("div", ["row"], "", {});
+        const inputlabel3 = createElementCustom("label", ["col-sm-3", "col-form-label"], "Horas trabajadas:", {"for":"inputHorasTrabEmpEj13"});
+        const inputCol3 = createElementCustom("div", ["col-sm-9"], "", {});
+        const divSubRow4 = createElementCustom("div", ["row"], "", {});
+        const inputlabel4 = createElementCustom("label", ["col-sm-3", "col-form-label"], "Valor Hora:", {"for":"inputValorHoraEmpEj13"});
+        const inputCol4 = createElementCustom("div", ["col-sm-9"], "", {});
+        const divRowBotones = createElementCustom("div", ["row"], "", {});
+        const divColRowBotones = createElementCustom("div", ["col", "d-flex", "gap-3", "justify-content-center", "mt-2"], "", {});
+        const inputNombreEmp = createElementCustom("input", ["form-control"], "", {
+            "type": "text",
+            "id": "inputNombreEmpEj13",
+            "placeholder": "Ingrese un nombre..."
+        });
+        const inputAntiguedadEmp = createElementCustom("input", ["form-control"], "", {
+            "type": "number",
+            "min": "0",
+            "max": "99",
+            "id": "inputAntigEmpEj13",
+            "placeholder": "Ingrese años de antiguedad..."
+        });
+        const inputHorasTrabajadasEmp = createElementCustom("input", ["form-control"], "", {
+            "type": "number",
+            "min": "0",
+            "id": "inputHorasTrabEmpEj13",
+            "placeholder": "Ingrese total de horas trabajadas..."
+        });
+        const inputValorHorasEmp = createElementCustom("input", ["form-control"], "", {
+            "type": "number",
+            "min": "0",
+            "id": "inputValorHoraEmpEj13",
+            "placeholder": "Ingrese valor de cada hora trabajada..."
+        });
+        const buttonAgregar = createElementCustom("button", ["btn", "btn-success", "mt-1"], "Agregar Empleado", { 
+            "type": "button",
+            "id": "btnAgregarEj13"
+        });
+        const buttonCalcular = createElementCustom("button", ["btn", "btn-primary", "mt-1"], "Calcular Salarios", { 
+            "type": "button",
+            "id": "btnCalcularEj13"
+        });
+        const buttonReiniciar = createElementCustom("button", ["btn", "btn-secondary", "mt-1"], "Reiniciar", {
+            "type": "button",
+            "id": "btnReiniciarEj13"
+        });
+
+        const divRowEmpAgreg = createElementCustom("div", ["row"], "", {});
+        const divColRowEmpAgreg = createElementCustom("div", ["col"], "", {});
+        const pEmpAgreg = createElementCustom("p", ["text-center", "fw-bolder", "mt-2"], "", {"id": "txtEmpAgregadoEj13"});
+        /* Uno los elementos según como corresponde */
+        divRow.appendChild(h3);
+        divRow.appendChild(p1);
+        divRow.appendChild(divContenedorDeInputs);
+
+        // Row contendor central
+        divContenedorDeInputs.appendChild(divColContenedor);
+        divColContenedor.appendChild(divSubRow1);
+        divColContenedor.appendChild(divSubRow2);
+        divColContenedor.appendChild(divSubRow3);
+        divColContenedor.appendChild(divSubRow4);
+        
+        // Row Input 1
+        divSubRow1.appendChild(inputlabel1);
+        divSubRow1.appendChild(inputCol1);
+        inputCol1.appendChild(inputNombreEmp);
+
+        // Row Input 2
+        divSubRow2.appendChild(inputlabel2);
+        divSubRow2.appendChild(inputCol2);
+        inputCol2.appendChild(inputAntiguedadEmp);
+
+        // Row Input 3
+        divSubRow3.appendChild(inputlabel3);
+        divSubRow3.appendChild(inputCol3);
+        inputCol3.appendChild(inputHorasTrabajadasEmp);
+
+        // Row Input 4        
+        divSubRow4.appendChild(inputlabel4);
+        divSubRow4.appendChild(inputCol4);
+        inputCol4.appendChild(inputValorHorasEmp);
+
+        // Row de Botones
+        divRowBotones.appendChild(divColRowBotones);
+        divColRowBotones.appendChild(buttonAgregar);
+        divColRowBotones.appendChild(buttonCalcular);
+        divColRowBotones.appendChild(buttonReiniciar);
+        divColContenedor.appendChild(divRowBotones);
+
+        // Row para mostrar el 'p' del empleado agregado
+        divRowEmpAgreg.appendChild(divColRowEmpAgreg);
+        divColRowEmpAgreg.appendChild(pEmpAgreg);
+        divColContenedor.appendChild(divRowEmpAgreg);
+
+        /* Row 2 y sus sub elementos */        
+        const divRow2 = createElementCustom("div", ["mb-3", "row"], "", {});
+        const divSubRow1Row2 = createElementCustom("div", ["row"], "", {});
+        const divSubCol1SubRow1 = createElementCustom("div", ["col"], "", {});
+        const pResult = createElementCustom("p", ["text-center", "mb-5"], "Respuesta:", {});
+        const divSubRow2Row2 = createElementCustom("div", ["row"], "", {});
+        const divSubCol2SubRow2 = createElementCustom("div", ["col", "d-flex", "justify-content-center"], "", {});
+        const divResult = createElementCustom("div", ["d-flex", "justify-content-center", "table-responsive", "rounded"], "", {"id": "divResultadoEj13"});
+
+        /* Uno los elementos según como corresponde */
+        divSubRow1Row2.appendChild(divSubCol1SubRow1);
+        divSubCol1SubRow1.appendChild(pResult);
+        divSubRow2Row2.appendChild(divSubCol2SubRow2);
+        divSubCol2SubRow2.appendChild(divResult);
+
+        // Junto los 2 sub-rows en el row central 2
+        divRow2.appendChild(divSubRow1Row2);
+        divRow2.appendChild(divSubRow2Row2);
+
+        // Row 3
+        const divRow3 = createElementCustom("div", ["mb-3", "row"], "", {});
+        const divColSvg = createElementCustom("div", ["col", "d-flex", "flex-column", "align-items-end"], "", {});
+        const svgInfo = `<div data-bs-toggle="collapse" data-bs-target="#collapseTextSvgInfoEj13" id="contenedorSvgInfoEj13">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36px" height="36px" viewBox="0 0 24 24" 
+            fill="none" id="svgInfoEj13" class="svgInfo">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 2c5.523 0 10 4.477 10 10a10 10 0 0 1 -19.995 .324l-.005 -.324l.004 -.28c.148 -5.393 4.566 -9.72 9.996 -9.72zm0 9h-1l-.117 .007a1 1 0 0 0 0 1.986l.117 .007v3l.007 .117a1 1 0 0 0 .876 .876l.117 .007h1l.117 -.007a1 1 0 0 0 .876 -.876l.007 -.117l-.007 -.117a1 1 0 0 0 -.764 -.857l-.112 -.02l-.117 -.006v-3l-.007 -.117a1 1 0 0 0 -.876 -.876l-.117 -.007zm.01 -3l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z" stroke-width="0" fill="currentColor" />
+            </svg>
+        </div>`;
+        const divTextSvgInfo = createElementCustom("div", ["collapse"], "", {"id":"collapseTextSvgInfoEj13"});
+        const textSvgInfo = createElementCustom("p", ["mb-0", "text-center", "fst-italic"], "Se pide calcular el importe a cobrar teniendo en cuenta que el total (que resulta de multiplicar el valor hora por la cantidad de horas trabajadas), hay que sumarle la cantidad de años trabajados multiplicados por $150, y al total de todas esas operaciones restarle el 13% en concepto de descuentos. \n\nMostrar el recibo correspondiente con el nombre, la antigüedad, el valor hora, el total a cobrar en bruto y el total a cobrar neto de todos los empleados ingresados.", {});
+
+        divRow3.appendChild(divColSvg);
+        divColSvg.innerHTML += svgInfo;
+        divColSvg.appendChild(divTextSvgInfo);
+        divTextSvgInfo.appendChild(textSvgInfo);
+    
+        return [divRow, divRow2, divRow3];
     },
-    function(){
-        // 14
+    function(){ // 14
     },
-    function(){
-        // 15
+    function(){ // 15
     },
-    function(){
-        // 16
+    function(){ // 16
     },
-    function(){
-        // 17
+    function(){ // 17
     },
-    function(){
-        // 18
+    function(){ // 18
     },
-    function(){
-        // 19
+    function(){ // 19
     },
-    function(){
-        // 20
+    function(){ // 20
     }
 ]
 
-export {contenedorModales };
+export { contenedorModales };

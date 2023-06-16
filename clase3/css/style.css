@@ -13,6 +13,6 @@ footer{
     background-color: rgba(0, 52, 100, 0.226);
 }
 
-#svgInfoEj12:hover{
+.svgInfo:hover{
     cursor: pointer;
 }

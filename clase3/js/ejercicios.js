@@ -387,16 +387,16 @@ document.querySelector("#btnReiniciarEj11").addEventListener("click", () => {
 */
 /* Lógica del ejercicio 12 */
 const svgEj12 = document.querySelector("#svgInfoEj12");
-const tooltip = new bootstrap.Tooltip(svgEj12, {
+const tooltipEj12 = new bootstrap.Tooltip(svgEj12, {
     boundary: document.querySelector("#modalEjercicio12"),
     animation: true,
     title: 'Más info del ejercicio',
     placement: 'top',
     trigger: 'manual'
 });
-document.querySelector("#contenedorSvgInfo").addEventListener("click", () => {
+document.querySelector("#contenedorSvgInfoEj12").addEventListener("click", () => {
     setTimeout(() => {
-        tooltip.toggle()
+        tooltipEj12.toggle()
     }, 235);
 });
 document.querySelector("#btnCalcularEj12").addEventListener("click", () => {
@@ -431,7 +431,7 @@ document.querySelector("#btnReiniciarEj12").addEventListener("click", () => {
 });
 
 /*
-    13. Se debe pedir el ingreso por teclado del valor hora, el nombre, la antigüedad (en años) y 
+    13. Se debe pedir el ingreso del valor hora, el nombre, la antigüedad (en años) y 
     la cantidad de horas trabajadas en el mes de N cantidad de empleados de una fábrica.
     Se pide calcular el importe a cobrar teniendo en cuenta que el total (que resulta de multiplicar el valor hora 
     por la cantidad de horas trabajadas), hay que sumarle la cantidad de años trabajados multiplicados por $150, 
@@ -441,6 +441,112 @@ document.querySelector("#btnReiniciarEj12").addEventListener("click", () => {
     y el total a cobrar neto de todos los empleados ingresados.
 */
 /* Lógica del ejercicio 13 */
+const arrayEmpleadosEj13 = [];
+const inputNombre = document.querySelector("#inputNombreEmpEj13");
+const inputAntiguedad = document.querySelector("#inputAntigEmpEj13");
+const inputHoras = document.querySelector("#inputHorasTrabEmpEj13");
+const inputValorHoras = document.querySelector("#inputValorHoraEmpEj13");
+const svgEj13 = document.querySelector("#svgInfoEj13");
+const tooltipEj13 = new bootstrap.Tooltip(svgEj13, {
+    boundary: document.querySelector("#modalEjercicio13"),
+    animation: true,
+    title: 'Más info del ejercicio',
+    placement: 'top',
+    trigger: 'manual'
+});
+const limpiar_ej13 = () => {
+    inputNombre.value = "";
+    inputAntiguedad.value = "";
+    inputHoras.value = "";
+    inputValorHoras.value = "";
+}
+document.querySelector("#contenedorSvgInfoEj13").addEventListener("click", () => {
+    setTimeout(() => {
+        tooltipEj13.toggle()
+    }, 235);
+});
+document.querySelector("#btnAgregarEj13").addEventListener("click", () => {
+    const mensajeEmpAgregado = document.querySelector("#txtEmpAgregadoEj13");
+    if (inputNombre.value == "" || inputAntiguedad.value == "" || inputHoras.value == "" || inputValorHoras.value == ""){
+        mensajeEmpAgregado.classList.add("text-danger");
+        mensajeEmpAgregado.textContent = "Todos los campos deben completarse para agregar un empleado.";
+        setTimeout(() => {
+            mensajeEmpAgregado.classList.remove("text-danger");
+            mensajeEmpAgregado.textContent = "";
+        }, 3000);
+    } else if (Number(inputAntiguedad.value) < 0 || Number(inputHoras.value) < 0 || Number(inputValorHoras.value) < 0){
+        mensajeEmpAgregado.classList.add("text-danger");
+        mensajeEmpAgregado.textContent = "Error: No se aceptan valores negativos.";
+        setTimeout(() => {
+            mensajeEmpAgregado.classList.remove("text-danger");
+            mensajeEmpAgregado.textContent = "";
+        }, 3000);
+    } else if (Number(inputAntiguedad.value) >= 100){
+        mensajeEmpAgregado.classList.add("text-danger");
+        mensajeEmpAgregado.textContent = "Error: La antiguedad no puede superar los 99 años.";
+        setTimeout(() => {
+            mensajeEmpAgregado.classList.remove("text-danger");
+            mensajeEmpAgregado.textContent = "";
+        }, 3000);
+    } else{
+        arrayEmpleadosEj13.push({
+            0: inputNombre.value,
+            1: Number(inputAntiguedad.value),
+            2: Number(inputHoras.value),
+            3: Number(inputValorHoras.value)
+        });
+        mensajeEmpAgregado.classList.add("text-success");
+        mensajeEmpAgregado.textContent = "Empleado agregado exitósamente.";
+        limpiar_ej13();
+        setTimeout(() => {
+            mensajeEmpAgregado.classList.remove("text-success");
+            mensajeEmpAgregado.textContent = "";
+        }, 4000);
+        console.log(arrayEmpleadosEj13);
+    }
+});
+document.querySelector("#btnReiniciarEj13").addEventListener("click", () => {
+    limpiar_ej13();
+    arrayEmpleadosEj13.length = 0;
+});
+document.querySelector("#btnCalcularEj13").addEventListener("click", () => {
+    const tabla = createElementCustom("table", ["table", "table-striped", "table-dark", "mb-0"], "", {});
+    const thead = createElementCustom("thead", [], "", {});
+    const tbody = createElementCustom("tbody", [], "", {});
+    const theadTr = createElementCustom("tr", [], "", {});
+    theadTr.appendChild(createElementCustom("th", [], "Nombre", {}));
+    theadTr.appendChild(createElementCustom("th", [], "Antigüedad", {}));
+    theadTr.appendChild(createElementCustom("th", [], "Horas Trabajadas", {}));
+    theadTr.appendChild(createElementCustom("th", [], "Valor x hora", {}));
+    theadTr.appendChild(createElementCustom("th", [], "Importe a cobrar (13% Desc)", {}));
+    thead.appendChild(theadTr);
+    tabla.appendChild(thead);
+
+    for (let i = 0; i < arrayEmpleadosEj13.length; i++){
+        let tr = createElementCustom("tr", [], "", {});
+        for (let j = 0; j <= Object.keys(arrayEmpleadosEj13[i]).length; j++){
+            let importeACobrar = (arrayEmpleadosEj13[i][2] * arrayEmpleadosEj13[i][3]) + (arrayEmpleadosEj13[i][1] * 150);
+            let importeFinal = importeACobrar - (importeACobrar * 0.13);
+            let td = null;
+            if (j == 4){
+                td = createElementCustom("td", ["text-center"], `$${importeFinal}`, {});
+            } else{
+                td = createElementCustom("td", ["text-center"], arrayEmpleadosEj13[i][j].toString(), {});
+            }
+            if (td){
+                tr.appendChild(td);
+            }
+        }
+        tbody.appendChild(tr);
+    }
+    tabla.appendChild(tbody);
+    /* Para limpiar el contenido de la tabla anterior en caso de agregar más empleados */
+    const divRespEj13 = document.querySelector("#divResultadoEj13");
+    if (divRespEj13.hasChildNodes()){
+        divRespEj13.removeChild(divRespEj13.firstElementChild);
+    }
+    document.querySelector("#divResultadoEj13").appendChild(tabla);
+});
 
 /*
     14. Generar una tabla en HTML (con CSS y Bootstrap) que muestre la tabla de multiplicar de un número que 
@@ -448,6 +554,7 @@ document.querySelector("#btnReiniciarEj12").addEventListener("click", () => {
     Debe ser cualquier número natural sin límite.
 */
 /* Lógica del ejercicio 14 */
+
 
 /*
     15. Una empresa prestadora de servicios de internet necesita un algoritmo que permita realizar el
