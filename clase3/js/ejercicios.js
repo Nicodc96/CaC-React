@@ -525,17 +525,13 @@ document.querySelector("#btnCalcularEj13").addEventListener("click", () => {
     for (let i = 0; i < arrayEmpleadosEj13.length; i++){
         let tr = createElementCustom("tr", [], "", {});
         for (let j = 0; j <= Object.keys(arrayEmpleadosEj13[i]).length; j++){
+            /* El índice [2] es la cantidad de horas, el [3] es el valor de cada hora, y el [1] es la antiguedad*/
             let importeACobrar = (arrayEmpleadosEj13[i][2] * arrayEmpleadosEj13[i][3]) + (arrayEmpleadosEj13[i][1] * 150);
             let importeFinal = importeACobrar - (importeACobrar * 0.13);
-            let td = null;
-            if (j == 4){
-                td = createElementCustom("td", ["text-center"], `$${importeFinal}`, {});
-            } else{
-                td = createElementCustom("td", ["text-center"], arrayEmpleadosEj13[i][j].toString(), {});
-            }
-            if (td){
-                tr.appendChild(td);
-            }
+            let td = j == 4 ?
+            createElementCustom("td", ["text-center"], `$${importeFinal}`, {}) :
+            createElementCustom("td", ["text-center"], arrayEmpleadosEj13[i][j].toString(), {});
+            tr.appendChild(td);
         }
         tbody.appendChild(tr);
     }
@@ -550,16 +546,60 @@ document.querySelector("#btnCalcularEj13").addEventListener("click", () => {
 
 /*
     14. Generar una tabla en HTML (con CSS y Bootstrap) que muestre la tabla de multiplicar de un número que 
-    se ingresa por input o prompt.
+    se ingresa por input.
     Debe ser cualquier número natural sin límite.
 */
 /* Lógica del ejercicio 14 */
+document.querySelector("#btnGenerarEj14").addEventListener("click", () => {
+    const inputNumero = document.querySelector("#inputNumeroEj14");
+    const divResultado = document.querySelector("#divResultadoEj14");
+    if (Number(inputNumero.value) <= 0){
+        const pTemp = createElementCustom("p", ["text-center", "text-danger", "fw-bolder"], "El número ingresado debe ser natural (<= 1).", {});
+        divResultado.appendChild(pTemp);
+        setTimeout(() => {
+            divResultado.removeChild(divResultado.firstElementChild);
+        }, 3000);
+    } else{
+        limpiar_ej14();
+        const tabla = createElementCustom("table", ["table", "table-striped", "table-sm", "mb-0"], "", {});
+        const thead = createElementCustom("thead", [], "", {});
+        const tbody = createElementCustom("tbody", [], "", {});
+        const theadTr = createElementCustom("tr", [], "", {});
 
+        theadTr.appendChild(createElementCustom("th", ["text-center"], `Tabla del ${inputNumero.value}`, {"colspan":"2"}));
+        thead.appendChild(theadTr);
+        tabla.appendChild(thead);
+
+        for (let i = 1; i <= 10; i++){
+            let tr = createElementCustom("tr", [], "", {});
+            for (let j = 1; j <= 2; j++){
+                let td = j == 1 ?
+                createElementCustom("td", ["text-center", "pe-3", "px-3"], `${Number(inputNumero.value)} x ${i}`) :
+                createElementCustom("td", ["text-center", "pe-3", "px-3"], `${Number(inputNumero.value) * i}`);
+                tr.appendChild(td);
+            }
+            tbody.appendChild(tr);
+        }
+        tabla.appendChild(tbody);
+        divResultado.appendChild(tabla);
+    }
+});
+const limpiar_ej14 = () => {
+    const divResultadoEj14 = document.querySelector("#divResultadoEj14");
+    if (divResultadoEj14.hasChildNodes()){
+        divResultadoEj14.removeChild(divResultadoEj14.firstElementChild);
+    }
+}
+
+document.querySelector("#btnReiniciarEj14").addEventListener("click", () => {
+    document.querySelector("#inputNumeroEj14").value = "";
+    limpiar_ej14();
+});
 
 /*
-    15. Una empresa prestadora de servicios de internet necesita un algoritmo que permita realizar el
-    cálculo del monto a pagar de la factura de consumo de internet de 5 clientes de una empresa.
-    Para ellos, el programa debe solicitar por teclado dos datos: DNI cliente, y tipo de servicio.
+    15. Desarrollar un algoritmo que permita realizar el cálculo del monto a pagar de la factura de consumo
+    de internet de 5 clientes de una empresa. Para ello, el programa debe solicitar por teclado dos datos:
+    DNI cliente, y tipo de servicio.
     Los tipos de servicio son 3:
     a. Internet 30 megas (valor de $750 - 10% de descuento)
     b. Internet 50 megas (valor $930 - 5% descuento)

@@ -677,6 +677,57 @@ const contenedorModales = [
         return [divRow, divRow2, divRow3];
     },
     function(){ // 14
+        const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
+        const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
+        const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-3"], "Generar una tabla en HTML (con CSS y Bootstrap) que muestre la tabla de multiplicar de un número que se ingresa por input.", {});
+        const label = createElementCustom("label", ["col-sm-3", "col-form-label"], "Ingrese el número:", {"for":"inputNumeroEj14"});
+        const divCol1 = createElementCustom("div", ["col-sm-9"], "", {});
+        const divRow1Plus = createElementCustom("div", ["row"], "", {});
+        const divCol1Plus = createElementCustom("div", ["col", "d-flex", "gap-3", "flex-row", "mt-2"], "", {});
+        const inputPalabra = createElementCustom("input", ["form-control"], "", {
+            "type": "number",
+            "min": "1",
+            "id": "inputNumeroEj14",
+            "placeholder": "Aquí escribir el número a generar la tabla..."
+        });
+        const buttonGenerar = createElementCustom("button", ["btn", "btn-primary", "mt-1"], "Generar", { 
+            "type": "button",
+            "id": "btnGenerarEj14"
+        });
+        const buttonReiniciar = createElementCustom("button", ["btn", "btn-secondary", "mt-1"], "Reiniciar", {
+            "type": "button",
+            "id": "btnReiniciarEj14"
+        })
+        /* Uno los elementos según como corresponde */
+        divCol1.appendChild(inputPalabra);
+        divCol1.appendChild(divRow1Plus);
+        divRow1Plus.appendChild(divCol1Plus);
+        divCol1Plus.appendChild(buttonGenerar);
+        divCol1Plus.appendChild(buttonReiniciar);
+        divRow.appendChild(h3);
+        divRow.appendChild(p1);
+        divRow.appendChild(label);
+        divRow.appendChild(divCol1);
+        
+        const divRow2 = createElementCustom("div", ["mb-3", "row"], "", {});
+        const divSubRow1Row2 = createElementCustom("div", ["row"], "", {});
+        const divSubCol1SubRow1 = createElementCustom("div", ["col"], "", {});
+        const pResult = createElementCustom("p", ["text-center", "mb-5"], "Respuesta:", {});
+        const divSubRow2Row2 = createElementCustom("div", ["row"], "", {});
+        const divSubCol2SubRow2 = createElementCustom("div", ["col", "d-flex", "justify-content-center"], "", {});
+        const divResult = createElementCustom("div", ["d-flex", "justify-content-center", "table-responsive", "rounded"], "", {"id": "divResultadoEj14"});
+
+        /* Uno los elementos según como corresponde */
+        divSubRow1Row2.appendChild(divSubCol1SubRow1);
+        divSubCol1SubRow1.appendChild(pResult);
+        divSubRow2Row2.appendChild(divSubCol2SubRow2);
+        divSubCol2SubRow2.appendChild(divResult);
+
+        // Junto los 2 sub-rows en el row central 2
+        divRow2.appendChild(divSubRow1Row2);
+        divRow2.appendChild(divSubRow2Row2);
+    
+        return [divRow, divRow2];
     },
     function(){ // 15
     },
