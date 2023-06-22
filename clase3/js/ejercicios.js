@@ -454,17 +454,17 @@ const tooltipEj13 = new bootstrap.Tooltip(svgEj13, {
     placement: 'top',
     trigger: 'manual'
 });
+document.querySelector("#contenedorSvgInfoEj13").addEventListener("click", () => {
+    setTimeout(() => {
+        tooltipEj13.toggle()
+    }, 235);
+});
 const limpiar_ej13 = () => {
     inputNombre.value = "";
     inputAntiguedad.value = "";
     inputHoras.value = "";
     inputValorHoras.value = "";
 }
-document.querySelector("#contenedorSvgInfoEj13").addEventListener("click", () => {
-    setTimeout(() => {
-        tooltipEj13.toggle()
-    }, 235);
-});
 document.querySelector("#btnAgregarEj13").addEventListener("click", () => {
     const mensajeEmpAgregado = document.querySelector("#txtEmpAgregadoEj13");
     if (inputNombre.value == "" || inputAntiguedad.value == "" || inputHoras.value == "" || inputValorHoras.value == ""){
@@ -510,38 +510,49 @@ document.querySelector("#btnReiniciarEj13").addEventListener("click", () => {
     arrayEmpleadosEj13.length = 0;
 });
 document.querySelector("#btnCalcularEj13").addEventListener("click", () => {
-    const tabla = createElementCustom("table", ["table", "table-striped", "table-dark", "mb-0"], "", {});
-    const thead = createElementCustom("thead", [], "", {});
-    const tbody = createElementCustom("tbody", [], "", {});
-    const theadTr = createElementCustom("tr", [], "", {});
-    theadTr.appendChild(createElementCustom("th", [], "Nombre", {}));
-    theadTr.appendChild(createElementCustom("th", [], "Antigüedad", {}));
-    theadTr.appendChild(createElementCustom("th", [], "Horas Trabajadas", {}));
-    theadTr.appendChild(createElementCustom("th", [], "Valor x hora", {}));
-    theadTr.appendChild(createElementCustom("th", [], "Importe a cobrar (13% Desc)", {}));
-    thead.appendChild(theadTr);
-    tabla.appendChild(thead);
+    if (arrayEmpleadosEj13.length == 0){
+        const mensajeEmpAgregado = document.querySelector("#txtEmpAgregadoEj13");
+        mensajeEmpAgregado.classList.add("text-danger");
+        mensajeEmpAgregado.textContent = "Se debe agregar al menos un empleado antes.";
+        limpiar_ej13();
+        setTimeout(() => {
+            mensajeEmpAgregado.classList.remove("text-danger");
+            mensajeEmpAgregado.textContent = "";
+        }, 3000);
+    } else{
+        const tabla = createElementCustom("table", ["table", "table-striped", "table-dark", "mb-0"], "", {});
+        const thead = createElementCustom("thead", [], "", {});
+        const tbody = createElementCustom("tbody", [], "", {});
+        const theadTr = createElementCustom("tr", [], "", {});
+        theadTr.appendChild(createElementCustom("th", [], "Nombre", {}));
+        theadTr.appendChild(createElementCustom("th", [], "Antigüedad", {}));
+        theadTr.appendChild(createElementCustom("th", [], "Horas Trabajadas", {}));
+        theadTr.appendChild(createElementCustom("th", [], "Valor x hora", {}));
+        theadTr.appendChild(createElementCustom("th", [], "Importe a cobrar (13% Desc)", {}));
+        thead.appendChild(theadTr);
+        tabla.appendChild(thead);
 
-    for (let i = 0; i < arrayEmpleadosEj13.length; i++){
-        let tr = createElementCustom("tr", [], "", {});
-        for (let j = 0; j <= Object.keys(arrayEmpleadosEj13[i]).length; j++){
-            /* El índice [2] es la cantidad de horas, el [3] es el valor de cada hora, y el [1] es la antiguedad*/
-            let importeACobrar = (arrayEmpleadosEj13[i][2] * arrayEmpleadosEj13[i][3]) + (arrayEmpleadosEj13[i][1] * 150);
-            let importeFinal = importeACobrar - (importeACobrar * 0.13);
-            let td = j == 4 ?
-            createElementCustom("td", ["text-center"], `$${importeFinal}`, {}) :
-            createElementCustom("td", ["text-center"], arrayEmpleadosEj13[i][j].toString(), {});
-            tr.appendChild(td);
+        for (let i = 0; i < arrayEmpleadosEj13.length; i++){
+            let tr = createElementCustom("tr", [], "", {});
+            for (let j = 0; j <= Object.keys(arrayEmpleadosEj13[i]).length; j++){
+                /* El índice [2] es la cantidad de horas, el [3] es el valor de cada hora, y el [1] es la antiguedad*/
+                let importeACobrar = (arrayEmpleadosEj13[i][2] * arrayEmpleadosEj13[i][3]) + (arrayEmpleadosEj13[i][1] * 150);
+                let importeFinal = importeACobrar - (importeACobrar * 0.13);
+                let td = j == 4 ?
+                createElementCustom("td", ["text-center"], `$${importeFinal}`, {}) :
+                createElementCustom("td", ["text-center"], arrayEmpleadosEj13[i][j].toString(), {});
+                tr.appendChild(td);
+            }
+            tbody.appendChild(tr);
         }
-        tbody.appendChild(tr);
+        tabla.appendChild(tbody);
+        /* Para limpiar el contenido de la tabla anterior en caso de agregar más empleados */
+        const divRespEj13 = document.querySelector("#divResultadoEj13");
+        if (divRespEj13.hasChildNodes()){
+            divRespEj13.removeChild(divRespEj13.firstElementChild);
+        }
+        document.querySelector("#divResultadoEj13").appendChild(tabla);
     }
-    tabla.appendChild(tbody);
-    /* Para limpiar el contenido de la tabla anterior en caso de agregar más empleados */
-    const divRespEj13 = document.querySelector("#divResultadoEj13");
-    if (divRespEj13.hasChildNodes()){
-        divRespEj13.removeChild(divRespEj13.firstElementChild);
-    }
-    document.querySelector("#divResultadoEj13").appendChild(tabla);
 });
 
 /*
@@ -598,17 +609,155 @@ document.querySelector("#btnReiniciarEj14").addEventListener("click", () => {
 
 /*
     15. Desarrollar un algoritmo que permita realizar el cálculo del monto a pagar de la factura de consumo
-    de internet de 5 clientes de una empresa. Para ello, el programa debe solicitar por teclado dos datos:
+    de internet de clientes de una empresa. Para ello, el programa debe solicitar por teclado dos datos:
     DNI cliente, y tipo de servicio.
     Los tipos de servicio son 3:
-    a. Internet 30 megas (valor de $750 - 10% de descuento)
-    b. Internet 50 megas (valor $930 - 5% descuento)
-    c. Internet 100 megas (valor fijo de $1200)
+    a. Internet 30 megas (valor de $7.5/h - 10% de descuento a la suma final)
+    b. Internet 50 megas (valor $9.3/h - 5% descuento a la suma final)
+    c. Internet 100 megas (valor fijo de $12/h)
+    Se debe realizar el cálculo durante 30 días y mostrar en una tabla el monto a pagar y si se aplicó un descuento.
 */
 /* Lógica del ejercicio 15 */
+const listaClientesEj15 = [];
+const svgEj15 = document.querySelector("#svgInfoEj15");
+const tooltipEj15 = new bootstrap.Tooltip(svgEj15, {
+    boundary: document.querySelector("#modalEjercicio15"),
+    animation: true,
+    title: 'Más info del ejercicio',
+    placement: 'top',
+    trigger: 'manual'
+});
+document.querySelector("#contenedorSvgInfoEj15").addEventListener("click", () => {
+    setTimeout(() => {
+        tooltipEj15.toggle()
+    }, 245);
+});
+document.querySelector("#btnAgregarEj15").addEventListener("click", () => {
+    const inputDNI = document.querySelector("#inputDNIEj15");
+    const selectServicio = document.querySelector("#selectServCliEj15");
+    const pMensajeCliente = document.querySelector("#txtClienteAgregadoEj15");
+    if (selectServicio.options.selectedIndex == 0){
+        selectServicio.classList.add("is-invalid");
+        pMensajeCliente.classList.add("text-danger");
+        pMensajeCliente.textContent = "Debe elegir un servicio válido.";
+        setTimeout(() => {
+            selectServicio.classList.remove("is-invalid");
+            pMensajeCliente.classList.remove("text-danger");
+            pMensajeCliente.textContent = "";
+        }, 2000);
+    } else if (Number(inputDNI.value) < 0 || Number(inputDNI.value) > 99999999){
+        inputDNI.classList.add("is-invalid");
+        pMensajeCliente.classList.add("text-danger");
+        pMensajeCliente.innerText = "Se debe ingresar un DNI válido.\n(Valores: 0 - 99.999.999)";
+        setTimeout(() => {
+            inputDNI.classList.remove("is-invalid");
+            pMensajeCliente.classList.remove("text-danger");
+            pMensajeCliente.textContent = "";
+        }, 2500);
+    } else{
+        let existente = false;
+        if (listaClientesEj15.length > 0){
+            for (let i = 0; i < listaClientesEj15.length; i++){
+                if (listaClientesEj15[i][0] == inputDNI.value){
+                    existente = true;
+                    break;
+                }
+            }
+        }
+        if (existente == false){
+            listaClientesEj15.push({
+                0: inputDNI.value,
+                1: selectServicio.options.selectedIndex.toString()
+            });
+            pMensajeCliente.classList.add("text-success");
+            pMensajeCliente.innerText = "Se agregó exitosamente un cliente.";
+            setTimeout(() => {
+                pMensajeCliente.classList.remove("text-success");
+                pMensajeCliente.textContent = "";
+            }, 2000);
+        } else{
+            inputDNI.classList.add("is-invalid");
+            pMensajeCliente.classList.add("text-danger");
+            pMensajeCliente.innerText = "Error. DNI ya registrado.\n";
+            setTimeout(() => {
+                inputDNI.classList.remove("is-invalid");
+                pMensajeCliente.classList.remove("text-danger");
+                pMensajeCliente.textContent = "";
+            }, 2000);
+        }
+    }
+});
+document.querySelector("#btnCalcularEj15").addEventListener("click", () => {
+    const pMensajeCliente = document.querySelector("#txtClienteAgregadoEj15");
+    if (listaClientesEj15.length == 0){
+        pMensajeCliente.classList.add("text-danger");
+        pMensajeCliente.innerText = "Se debe ingresar al menos un cliente antes.";
+        setTimeout(() => {
+            pMensajeCliente.classList.remove("text-danger");
+            pMensajeCliente.textContent = "";
+        }, 2000);
+    } else{
+        const tabla = createElementCustom("table", ["table", "table-striped", "table-sm", "mb-0"], "", {});
+        const thead = createElementCustom("thead", [], "", {});
+        const tbody = createElementCustom("tbody", [], "", {});
+        const theadTr = createElementCustom("tr", [], "", {});
+        theadTr.appendChild(createElementCustom("th", ["text-center"], "DNI Cliente", {}));
+        theadTr.appendChild(createElementCustom("th", ["text-center"], "Servicio elegido", {}));
+        theadTr.appendChild(createElementCustom("th", ["text-center"], "Total a pagar", {}));
+        thead.appendChild(theadTr);
+        tabla.appendChild(thead);
+        
+        limpiar_tablaEj15();
+        for (let i = 0; i < listaClientesEj15.length; i++){
+            let tr = createElementCustom("tr", [], "", {});
+            for (let j = 0; j < Object.keys(listaClientesEj15[i]).length + 1; j++){
+                let td;
+                // Verifico si j == 2, por lo que será la columna con el valor a calcular
+                if (j == 2){
+                    let calculo = 0;
+                    if(listaClientesEj15[i][1] == "1"){
+                        calculo = (7.5*24)*30;
+                        calculo = calculo - calculo * 0.1;
+                        td = createElementCustom("td", ["text-center"], `$${calculo}`, {});
+                    } else if(listaClientesEj15[i][1] == "2"){
+                        calculo = (9.3*24)*30;
+                        calculo = calculo - calculo * 0.05;
+                        td = createElementCustom("td", ["text-center"], `$${calculo.toFixed(2)}`, {});
+                    } else{
+                        td = createElementCustom("td", ["text-center"], `$${(12*24)*30}`, {});
+                    }
+                } else if(j == 1){
+                    // Le asigno el contenido del texto del SELECT según el valor del índice que tiene el elemento en ese momento
+                    // EJ: listaClientesEj15[i]['1'] == 3 => option.value = 3 => "Internet 100 Mb"
+                    td = createElementCustom("td", ["text-center"], document.querySelector("#selectServCliEj15").options[listaClientesEj15[i]['1']].textContent, {});
+                } else{
+                    td = createElementCustom("td", ["text-center"], listaClientesEj15[i][j], {});
+                }
+                tr.appendChild(td);            
+            }
+            tbody.appendChild(tr);
+        }
+        tabla.appendChild(tbody);
+        document.querySelector("#divResultadoEj15").appendChild(tabla);
+    }
+});
+const limpiar_tablaEj15 = () => {
+    const divResultadoEj15 = document.querySelector("#divResultadoEj15");
+    if (divResultadoEj15.hasChildNodes()){
+        divResultadoEj15.removeChild(divResultadoEj15.firstElementChild);
+    }
+}
+document.querySelector("#btnReiniciarEj15").addEventListener("click", () => {
+    document.querySelector("#inputDNIEj15").value = "";
+    document.querySelector("#selectServCliEj15").options.selectedIndex = 0;
+    listaClientesEj15.length = 0;
+    limpiar_tablaEj15();
+});
 
 /*
-    16. 
+    16. Diseña un programa que a partir de un número natural N y un máximo M, calcule cuantos números
+    N existen desde el 1 hasta el M.
+    Ej: "¿Cúantas veces está escrito el número 6 del 1 al 1000? Respuesta: 309"
 */
 
 /*

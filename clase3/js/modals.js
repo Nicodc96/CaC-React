@@ -730,6 +730,122 @@ const contenedorModales = [
         return [divRow, divRow2];
     },
     function(){ // 15
+        /* Row 1 y sus sub elementos */
+        const divRow = createElementCustom("div", ["mb-3", "row"], "", {});
+        const h3 = createElementCustom("h3", ["text-center"], "Descripción del ejercicio", {});
+        const p1 = createElementCustom("p", ["text-center", "fst-italic", "mt-2"], "Desarrollar un algoritmo que permita realizar el cálculo del monto a pagar de la factura de consumo de internet de clientes de una empresa.", {});
+        const divContenedorDeInputs = createElementCustom("div", ["row"], "", {});
+        const divColContenedor = createElementCustom("div", ["col", "d-flex", "flex-column", "gap-1"], "", {});
+        const divSubRow1 = createElementCustom("div", ["row"], "", {});
+        const inputlabel1 = createElementCustom("label", ["col-sm-3", "col-form-label"], "DNI Cliente:", {"for":"inputDNIEj15"});
+        const inputCol1 = createElementCustom("div", ["col-sm-9"], "", {});
+        const divSubRow2 = createElementCustom("div", ["row"], "", {});
+        const inputlabel2 = createElementCustom("label", ["col-sm-3", "col-form-label"], "Servicio:", {"for":"selectServCliEj15"});
+        const inputCol2 = createElementCustom("div", ["col-sm-9"], "", {});
+        const divRowBotones = createElementCustom("div", ["row"], "", {});
+        const divColRowBotones = createElementCustom("div", ["col", "d-flex", "gap-3", "justify-content-center", "mt-2"], "", {});
+        const inputClienteDNI = createElementCustom("input", ["form-control"], "", {
+            "type": "number",
+            "id": "inputDNIEj15",
+            "placeholder": "Ingrese el DNI..."
+        });
+        const selectServicioCliente = createElementCustom("select", ["form-select"], "", {"id": "selectServCliEj15"});
+        const selectOption_0 = createElementCustom("option", [], "Seleccione una opción:", {"value":"0", "selected":""});
+        const selectOption_1 = createElementCustom("option", [], "Internet 30 Mb (10% Desc)", {"value":"1"});
+        const selectOption_2 = createElementCustom("option", [], "Internet 50 Mb (5% Desc)", {"value":"2"});
+        const selectOption_3 = createElementCustom("option", [], "Internet 100 Mb", {"value":"3"});
+        const buttonAgregar = createElementCustom("button", ["btn", "btn-success", "mt-1"], "Agregar Cliente", { 
+            "type": "button",
+            "id": "btnAgregarEj15"
+        });
+        const buttonCalcular = createElementCustom("button", ["btn", "btn-primary", "mt-1"], "Calcular", { 
+            "type": "button",
+            "id": "btnCalcularEj15"
+        });
+        const buttonReiniciar = createElementCustom("button", ["btn", "btn-secondary", "mt-1"], "Reiniciar", {
+            "type": "button",
+            "id": "btnReiniciarEj15"
+        });
+
+        const divRowEmpAgreg = createElementCustom("div", ["row"], "", {});
+        const divColRowEmpAgreg = createElementCustom("div", ["col"], "", {});
+        const pEmpAgreg = createElementCustom("p", ["text-center", "fw-bolder", "mt-2"], "", {"id": "txtClienteAgregadoEj15"});
+        
+        /* Uno los elementos según como corresponde */
+        divRow.appendChild(h3);
+        divRow.appendChild(p1);
+        divRow.appendChild(divContenedorDeInputs);
+
+        // Row contendor central
+        divContenedorDeInputs.appendChild(divColContenedor);
+        divColContenedor.appendChild(divSubRow1);
+        divColContenedor.appendChild(divSubRow2);
+        
+        // Row Input 1
+        divSubRow1.appendChild(inputlabel1);
+        divSubRow1.appendChild(inputCol1);
+        inputCol1.appendChild(inputClienteDNI);
+
+        // Row Input 2
+        divSubRow2.appendChild(inputlabel2);
+        divSubRow2.appendChild(inputCol2);
+        inputCol2.appendChild(selectServicioCliente);
+        selectServicioCliente.appendChild(selectOption_0);
+        selectServicioCliente.appendChild(selectOption_1);
+        selectServicioCliente.appendChild(selectOption_2);
+        selectServicioCliente.appendChild(selectOption_3);
+
+        // Row de Botones
+        divRowBotones.appendChild(divColRowBotones);
+        divColRowBotones.appendChild(buttonAgregar);
+        divColRowBotones.appendChild(buttonCalcular);
+        divColRowBotones.appendChild(buttonReiniciar);
+        divColContenedor.appendChild(divRowBotones);
+
+        // Row para mostrar el 'p' del cliente agregado
+        divRowEmpAgreg.appendChild(divColRowEmpAgreg);
+        divColRowEmpAgreg.appendChild(pEmpAgreg);
+        divColContenedor.appendChild(divRowEmpAgreg);
+
+        /* Row 2 y sus sub elementos */        
+        const divRow2 = createElementCustom("div", ["mb-3", "row"], "", {});
+        const divSubRow1Row2 = createElementCustom("div", ["row"], "", {});
+        const divSubCol1SubRow1 = createElementCustom("div", ["col"], "", {});
+        const pResult = createElementCustom("p", ["text-center", "mb-5"], "Respuesta:", {});
+        const divSubRow2Row2 = createElementCustom("div", ["row"], "", {});
+        const divSubCol2SubRow2 = createElementCustom("div", ["col", "d-flex", "justify-content-center"], "", {});
+        const divResult = createElementCustom("div", ["d-flex", "justify-content-center", "table-responsive", "rounded"], "", {"id": "divResultadoEj15"});
+
+        /* Uno los elementos según como corresponde */
+        divSubRow1Row2.appendChild(divSubCol1SubRow1);
+        divSubCol1SubRow1.appendChild(pResult);
+        divSubRow2Row2.appendChild(divSubCol2SubRow2);
+        divSubCol2SubRow2.appendChild(divResult);
+
+        // Junto los 2 sub-rows en el row central 2
+        divRow2.appendChild(divSubRow1Row2);
+        divRow2.appendChild(divSubRow2Row2);
+
+        // Row 3
+        const divRow3 = createElementCustom("div", ["mb-3", "row"], "", {});
+        const divColSvg = createElementCustom("div", ["col", "d-flex", "flex-column", "align-items-end"], "", {});
+        const svgInfo = `<div data-bs-toggle="collapse" data-bs-target="#collapseTextSvgInfoEj15" id="contenedorSvgInfoEj15">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36px" height="36px" viewBox="0 0 24 24" 
+            fill="none" id="svgInfoEj15" class="svgInfo">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 2c5.523 0 10 4.477 10 10a10 10 0 0 1 -19.995 .324l-.005 -.324l.004 -.28c.148 -5.393 4.566 -9.72 9.996 -9.72zm0 9h-1l-.117 .007a1 1 0 0 0 0 1.986l.117 .007v3l.007 .117a1 1 0 0 0 .876 .876l.117 .007h1l.117 -.007a1 1 0 0 0 .876 -.876l.007 -.117l-.007 -.117a1 1 0 0 0 -.764 -.857l-.112 -.02l-.117 -.006v-3l-.007 -.117a1 1 0 0 0 -.876 -.876l-.117 -.007zm.01 -3l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z" stroke-width="0" fill="currentColor" />
+            </svg>
+        </div>`;
+        const divTextSvgInfo = createElementCustom("div", ["collapse"], "", {"id":"collapseTextSvgInfoEj15"});
+        const textSvgInfo = createElementCustom("p", ["mb-0", "text-center", "fst-italic"], "", {});
+        textSvgInfo.innerText = "El programa debe solicitar por teclado dos datos: DNI cliente, y tipo de servicio.\nLos tipos de servicio son 3:\na) Internet 30 megas (valor de $7.5/h - 10% de descuento a la suma final)\nb) Internet 50 megas (valor $9.3/h - 5% descuento a la suma final)\nc) Internet 100 megas (valor fijo de $12/h)\nSe debe realizar el cálculo durante 30 días y mostrar en una tabla el monto a pagar y si se aplicó un descuento.";
+
+        divRow3.appendChild(divColSvg);
+        divColSvg.innerHTML += svgInfo;
+        divColSvg.appendChild(divTextSvgInfo);
+        divTextSvgInfo.appendChild(textSvgInfo);
+    
+        return [divRow, divRow2, divRow3];
     },
     function(){ // 16
     },
