@@ -552,7 +552,7 @@ const contenedorModales = [
         const inputlabel4 = createElementCustom("label", ["col-sm-3", "col-form-label"], "Valor Hora:", {"for":"inputValorHoraEmpEj13"});
         const inputCol4 = createElementCustom("div", ["col-sm-9"], "", {});
         const divRowBotones = createElementCustom("div", ["row"], "", {});
-        const divColRowBotones = createElementCustom("div", ["col", "d-flex", "gap-3", "justify-content-center", "mt-2"], "", {});
+        const divColRowBotones = createElementCustom("div", ["col", "d-flex", "gap-3", "justify-content-center", "mt-2"], "", {"id":"contenedorBotonesEj13"});
         const inputNombreEmp = createElementCustom("input", ["form-control"], "", {
             "type": "text",
             "id": "inputNombreEmpEj13",
@@ -638,7 +638,7 @@ const contenedorModales = [
         divColContenedor.appendChild(divRowEmpAgreg);
 
         /* Row 2 y sus sub elementos */        
-        const divRow2 = createElementCustom("div", ["mb-3", "row"], "", {});
+        const divRow2 = createElementCustom("div", ["mb-3", "row", "justify-content-center"], "", {"id":"divRow2Ej13"});
         const divSubRow1Row2 = createElementCustom("div", ["row"], "", {});
         const divSubCol1SubRow1 = createElementCustom("div", ["col"], "", {});
         const pResult = createElementCustom("p", ["text-center", "mb-5"], "Respuesta:", {});
@@ -743,7 +743,7 @@ const contenedorModales = [
         const inputlabel2 = createElementCustom("label", ["col-sm-3", "col-form-label"], "Servicio:", {"for":"selectServCliEj15"});
         const inputCol2 = createElementCustom("div", ["col-sm-9"], "", {});
         const divRowBotones = createElementCustom("div", ["row"], "", {});
-        const divColRowBotones = createElementCustom("div", ["col", "d-flex", "gap-3", "justify-content-center", "mt-2"], "", {});
+        const divColRowBotones = createElementCustom("div", ["col", "d-flex", "gap-3", "justify-content-center", "mt-2"], "", {"id":"contenedorBotonesEj15"});
         const inputClienteDNI = createElementCustom("input", ["form-control"], "", {
             "type": "number",
             "id": "inputDNIEj15",

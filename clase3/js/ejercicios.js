@@ -523,7 +523,7 @@ document.querySelector("#btnCalcularEj13").addEventListener("click", () => {
         const tabla = createElementCustom("table", ["table", "table-striped", "table-dark", "mb-0"], "", {});
         const thead = createElementCustom("thead", [], "", {});
         const tbody = createElementCustom("tbody", [], "", {});
-        const theadTr = createElementCustom("tr", [], "", {});
+        const theadTr = createElementCustom("tr", [], "", {"id":"theadRowEj13"});
         theadTr.appendChild(createElementCustom("th", [], "Nombre", {}));
         theadTr.appendChild(createElementCustom("th", [], "Antigüedad", {}));
         theadTr.appendChild(createElementCustom("th", [], "Horas Trabajadas", {}));
@@ -533,7 +533,7 @@ document.querySelector("#btnCalcularEj13").addEventListener("click", () => {
         tabla.appendChild(thead);
 
         for (let i = 0; i < arrayEmpleadosEj13.length; i++){
-            let tr = createElementCustom("tr", [], "", {});
+            let tr = createElementCustom("tr", ["tr-table-responsive"], "", {});
             for (let j = 0; j <= Object.keys(arrayEmpleadosEj13[i]).length; j++){
                 /* El índice [2] es la cantidad de horas, el [3] es el valor de cada hora, y el [1] es la antiguedad*/
                 let importeACobrar = (arrayEmpleadosEj13[i][2] * arrayEmpleadosEj13[i][3]) + (arrayEmpleadosEj13[i][1] * 150);

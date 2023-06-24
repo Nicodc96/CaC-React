@@ -1,0 +1,136 @@
+@media screen and (max-width:1310px) {
+    #containerEjercicios{
+        margin-left: 16%;
+    }
+}
+
+@media screen and (max-width:1190px) {
+    #containerEjercicios{
+        margin-left: 12%;
+    }
+}
+
+@media screen and (max-width:1080px) {
+    #containerEjercicios{
+        margin-left: 8%;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    #containerEjercicios{
+        margin-left: 6%;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    #containerEjercicios{
+        margin-left: 4%;
+    }
+}
+
+@media screen and (max-width:960px) {
+    #containerEjercicios{
+        margin-left: 2%;
+    }
+}
+
+@media screen and (max-width:920px) {
+    #containerEjercicios{
+        margin-left: 0%;
+    }
+}
+
+@media screen and (max-width:820px) {
+    #headerTitle{
+        font-size: 26px;
+    }
+    #headerSubtitle{
+        font-size: 16px!important;
+    }
+}
+
+@media screen and (max-width:768px) {
+    #inputHorasTrabEmpEj13, #inputNombreEmpEj13{
+        margin-top: 1.4vw;
+    }
+    #theadRowEj13 > th{
+        font-size: 12px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:700px) {
+    #sectionHeader{
+        flex-direction: column!important;
+    }
+}
+
+@media screen and (max-width:520px) {
+    #containerEjercicios{
+        gap: 1.2rem!important;
+    }
+}
+
+@media screen and (max-width:470px) {
+    footer{
+        top: 89.5vh;
+    }
+    #navFooter{
+        padding-top: 0.5rem!important;
+    }
+    #containerElementsFooter{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:425px) {
+    #contenedorBotonesEj15, #contenedorBotonesEj13{
+        margin-left: 3vw;
+    }
+    #contenedorBotonesEj15 > .btn, #contenedorBotonesEj13 > .btn{
+        font-size:13px;
+        margin: 1px;
+    }
+    #theadRowEj13 > th{
+        font-size: 12px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:390px) {
+    #headerTitle{
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width:375px) {
+    #theadRowEj13 > th{
+        font-size: 11px;
+        text-align: center;
+    }
+    .tr-table-responsive > td{
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width:354px) {
+    footer{
+        position: initial;
+    }
+    #containerEjercicios{
+        margin-bottom: 3vh;
+    }
+}
+
+@media screen and (max-width:330px) {
+    #headerTitle{
+        font-size: 20px;
+    }
+    #contenedorBotonesEj15, #contenedorBotonesEj13{
+        margin-left: 3vw;
+    }
+    #contenedorBotonesEj15 > .btn, #contenedorBotonesEj13 > .btn{
+        font-size:13px;
+    }
+}
+
