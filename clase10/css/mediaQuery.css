@@ -53,9 +53,6 @@
     .box:hover input{
         width: 253px;
     }
-    /* #tituloPeliculas > .col-4:nth-child(3):hover{
-        padding-left: 56vw;
-    } */
 }
 @media screen and (max-width:375px){
     #tituloPeliculas > .col-4:nth-child(3){
